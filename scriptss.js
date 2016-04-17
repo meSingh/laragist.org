@@ -253,7 +253,7 @@ function prepareSnippets(data){
 
 
 function prepareSnippetsIndex(data){
-    var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
+    var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="{{readmore}}" class="link-text" data-toggle="modal" data-target="#submitModal" >Read More</a></div></div></div>'
     var final = ""
     $.each(data.data,function(index,value){
         string = string.replace('{{name}}',value.name);
@@ -261,7 +261,7 @@ function prepareSnippetsIndex(data){
         string = string.replace('{{total}}',value.downloads_total);
         string = string.replace('{{repo}}',value.name);
         final += string;
-        string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
+        string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="{{readmore}}" class="link-text">Read More</a></div></div></div>'
 
     })
 
