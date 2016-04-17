@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352bfb83-4092-4e9a-9a9a-05b5b80ace29" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptss.js" afterPath="$PROJECT_DIR$/scriptss.js" />
+=======
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptss.js" afterPath="$PROJECT_DIR$/scriptss.js" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptss.js" afterPath="$PROJECT_DIR$/scriptss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submit.html" afterPath="$PROJECT_DIR$/submit.html" />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
     </list>
     <ignored path="gistweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,12 +35,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scriptss.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scriptss.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scriptss.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="130">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="457">
+              <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+              <folding>
+                <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
+                <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
+                <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
+                <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <state relative-caret-position="-2418">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <marker date="1460918804000" expanded="true" signature="7194:7214" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="7241:7261" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="7991:8011" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="8038:8058" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="8528:8548" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="8575:8595" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="9328:9348" placeholder="..." />
+                <marker date="1460918804000" expanded="true" signature="9375:9395" placeholder="..." />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+              </folding>
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
             </state>
           </provider>
         </entry>
@@ -38,13 +73,20 @@
       <file leaf-file-name="submit.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/submit.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="614">
+              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+=======
             <state relative-caret-position="52">
               <caret line="73" column="104" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="104" />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,6 +97,7 @@
           </provider>
         </entry>
       </file>
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -64,9 +107,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/style.css" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/submit.html" />
+        <option value="$PROJECT_DIR$/scriptss.js" />
+=======
         <option value="$PROJECT_DIR$/scriptss.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/submit.html" />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
       </list>
     </option>
   </component>
@@ -207,13 +256,28 @@
       <workItem from="1460802737254" duration="2060000" />
       <workItem from="1460816203173" duration="705000" />
       <workItem from="1460878624876" duration="7730000" />
+<<<<<<< HEAD
+      <workItem from="1460917417686" duration="450000" />
+=======
       <workItem from="1460917417686" duration="824000" />
+<<<<<<< HEAD
       <workItem from="1460920844567" duration="66000" />
+=======
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="11385000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="10945000" />
+=======
+    <option name="totallyTimeSpent" value="11319000" />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -299,7 +363,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2314">
           <caret line="89" column="53" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+<<<<<<< HEAD
+            <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <marker date="1460918804000" expanded="true" signature="7194:7214" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7241:7261" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7991:8011" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8038:8058" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8528:8548" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8575:8595" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9328:9348" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9375:9395" placeholder="..." />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+          </folding>
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
         </state>
       </provider>
     </entry>
@@ -331,7 +415,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+<<<<<<< HEAD
+            <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <marker date="1460918804000" expanded="true" signature="7194:7214" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7241:7261" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7991:8011" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8038:8058" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8528:8548" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8575:8595" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9328:9348" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9375:9395" placeholder="..." />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+          </folding>
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
         </state>
       </provider>
     </entry>
@@ -355,7 +459,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+<<<<<<< HEAD
+            <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <marker date="1460918804000" expanded="true" signature="7194:7214" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7241:7261" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7991:8011" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8038:8058" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8528:8548" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8575:8595" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9328:9348" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9375:9395" placeholder="..." />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+          </folding>
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
         </state>
       </provider>
     </entry>
@@ -390,35 +514,85 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+=======
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8024">
+          <caret line="4471" column="39" selection-start-line="4471" selection-start-column="39" selection-end-line="4471" selection-end-column="39" />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8024">
           <caret line="4471" column="39" selection-start-line="4471" selection-start-column="39" selection-end-line="4471" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/scriptss.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+<<<<<<< HEAD
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8294">
-          <caret line="319" column="23" selection-start-line="319" selection-start-column="23" selection-end-line="319" selection-end-column="23" />
-          <folding />
+=======
+          <folding>
+            <marker date="1460918804000" expanded="true" signature="7194:7214" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7241:7261" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="7991:8011" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8038:8058" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8528:8548" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="8575:8595" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9328:9348" placeholder="..." />
+            <marker date="1460918804000" expanded="true" signature="9375:9395" placeholder="..." />
+          </folding>
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/submit.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="8294">
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="614">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+=======
+        <state relative-caret-position="432">
+>>>>>>> a9fcd7f33334e9ac73238210ce1f05180ef94e19
+          <caret line="319" column="23" selection-start-line="319" selection-start-column="23" selection-end-line="319" selection-end-column="23" />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/scriptss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+          <folding>
+            <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
+            <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/submit.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="73" column="104" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="104" />
           <folding />
+>>>>>>> c729a57ad6c077d5e0b765f05c1ae95584f2f098
         </state>
       </provider>
     </entry>

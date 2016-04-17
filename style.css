@@ -3643,7 +3643,7 @@ footer.short-2 .contact-action:hover {
   margin-bottom: 16px;
 }
 .blog-masonry-item p {
-  margin-bottom: 32px;
+
 }
 .blog-masonry-item span {
   display: block;
@@ -3651,9 +3651,9 @@ footer.short-2 .contact-action:hover {
   line-height: 18px;
 }
 .blog-masonry-item .link-text {
-  position: absolute;
-  bottom: 32px;
-  right: 32px;
+    /*margin-right: 10px;*/
+    margin-top: 10px;
+    float: right;
 }
 .blog-masonry-item h1 {
   font-weight: 600;
@@ -4340,9 +4340,6 @@ footer.short-2 .contact-action:hover {
   background: #fff;
   padding: 28px 32px 32px 32px;
   position: relative;
- max-height: 235px;
- min-height: 235px;
- min-width: 355px !important;
   
 }
 
