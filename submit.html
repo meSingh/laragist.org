@@ -30,7 +30,7 @@
                 </a>
                 <nav class="pull-right">
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="submit.html">Submit Package</a></li>
                         <li><a href="#">Khurafat</a></li>
@@ -45,10 +45,21 @@
             	<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
-							<h3>A handpicked selection of top Laravel packages</h3>
+							<h3 id="brand-title">A handpicked selection of top Laravel packages</h3>
                             <br>
 							<h4><a class="signup" href="#">Want yours added to the list?</a></h4>
-
+                            <br/>
+                            <div class="row">
+                              <div class="col-lg-12">
+                                <div class="input-group">
+                                  <input type="text" id="searchInput" class="form-control" placeholder="Search for...">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default" id="search" type="button">Search</button>
+                                  </span>
+                                </div><!-- /input-group -->
+                              </div><!-- /.col-lg-6 -->
+                            </div><!-- /.row -->
+                         
 						</div>
 					</div>
 				</div>
@@ -57,17 +68,8 @@
                     
 					<div class="row">
 						<div class="col-sm-12 text-center">
-							<ul class="blog-filters">
-								<li data-filter="*" class="active"><span>All</span></li>
-								<li data-filter=".Tech"><span>Technology</span></li>
-                                <li data-filter=".Business"><span>Business</span></li>
-                                <li data-filter=".Gaming"><span>Gaming</span></li>
-                                <li data-filter=".tv"><span>Television</span></li>
-								<li data-filter=".Design"><span>Design</span></li>
-                                <li data-filter=".Movies"><span>Movies</span></li>
-                                <li data-filter=".Music"><span>Music</span></li>
-                                <li data-filter=".Social"><span>Social</span></li>
-							</ul>
+                            <br/>
+                            <div class="alert alert-danger error hidden"> :( Nothing found! Please try searching with different keyword</div>
 						</div>
 					</div>
 				</div>
@@ -319,4 +321,4 @@
 
 
 
-                </body></html>
+</body></html>
