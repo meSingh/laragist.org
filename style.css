@@ -4466,4 +4466,12 @@ width: 85% !important;
   -webkit-border-radius: 22px;
   -moz-border-radius: 22px;
   border-radius: 22px;
+
+}
+
+#searchInput:hover, #searchInput:focus{
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none    ;
+  box-shadow: none    ;
+  border-color: #F14A49;
 }
