@@ -3,7 +3,7 @@ $(document).ready(function(){
     "use strict";
     
     // Nav Sticky
-    init();
+
 
     $(window).scroll(function(){
         if($(window).scrollTop() > 500 && !$('.mobile-toggle').is(":visible")){
