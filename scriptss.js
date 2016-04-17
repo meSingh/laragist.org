@@ -80,7 +80,7 @@ $(document).ready(function(){
         var q = $(this).val();
         if(q.length <= 2)
             return 0
-        $.get('http://internal-api.laragist.org/v1/?q='+q).done(function(data){
+        $.get('https://packagist.org/search.json?q='+q).done(function(data){
             $('.error').addClass('hidden')
             $('#brand-title').html(" Search Results...")
             $('.no-content').hide()
