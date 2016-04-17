@@ -191,21 +191,21 @@ $(window).load(function(){
     
     // Blog Masonry
     
-    $('.blog-masonry-container').isotope({
-      itemSelector: '.blog-masonry-item',
-      layoutMode: 'masonry'
-    });
+    // $('.blog-masonry-container').isotope({
+    //   itemSelector: '.blog-masonry-item',
+    //   layoutMode: 'masonry'
+    // });
     
-    $('.blog-filters li').click(function() {
-      var current = $(this);
+    // $('.blog-filters li').click(function() {
+    //   var current = $(this);
       
-      current.siblings('li').removeClass('active');
-      current.addClass('active');
+    //   current.siblings('li').removeClass('active');
+    //   current.addClass('active');
       
-      var filterValue = current.attr('data-filter');
-      var container = current.closest('.blog-masonry').find('.blog-masonry-container');
-      container.isotope({ filter: filterValue });
-    });
+    //   var filterValue = current.attr('data-filter');
+    //   var container = current.closest('.blog-masonry').find('.blog-masonry-container');
+    //   container.isotope({ filter: filterValue });
+    // });
 
 
 
@@ -236,7 +236,7 @@ function alignBottom(){
 
 
 function prepareSnippets(data){
-    var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
+    var string = '<div class="blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title row"><div class="col-md-10"><h1 style="margin-bottom: 10px;">{{name}}</h1> <h4 style="margin-bottom: 0px;"><p>{{meta}}</p></h4></div><div class="post-meta col-md-2 "> <span class="sub alt-font text-right">Downloads: {{total}}</span><a href="#" class="link-text text-right" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div></div>'
     var final = ""
     $.each(data.data,function(index,value){
         string = string.replace('{{name}}',value.name);
@@ -244,7 +244,7 @@ function prepareSnippets(data){
         string = string.replace('{{total}}',value.downloads_total);
         string = string.replace('{{repo}}',value.name);
         final += string;
-        string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
+        string = '<div class="blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title row"><div class="col-md-10"><h1 style="margin-bottom: 10px;">{{name}}</h1> <h4 style="margin-bottom: 0px;"><p>{{meta}}</p></h4></div><div class="post-meta col-md-2 "> <span class="sub alt-font text-right">Downloads: {{total}}</span><a href="#" class="link-text text-right" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div></div>'
 
     })
 
