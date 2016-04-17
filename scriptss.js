@@ -3,7 +3,8 @@ $(document).ready(function(){
     "use strict";
     
     // Nav Sticky
-    
+    init();
+
     $(window).scroll(function(){
         if($(window).scrollTop() > 500 && !$('.mobile-toggle').is(":visible")){
             $('.top-bar').addClass('nav-sticky');
@@ -79,7 +80,7 @@ $(document).ready(function(){
         var q = $(this).val();
         if(q.length <= 2)
             return 0
-        $.get('https://packagist.org/search.json?q='+q).done(function(data){
+        $.get('http://internal-api.laragist.org/v1/?q='+q).done(function(data){
             $('.error').addClass('hidden')
             $('#brand-title').html(" Search Results...")
             $('.no-content').hide()
@@ -91,8 +92,8 @@ $(document).ready(function(){
             }
             $('.blog-masonry-container').html(prepareSnippets(data))
         }).fail(function (data) {
-                $('.no-content').show()
-                $('.error').show()
+            $('.error').removeClass('hidden')
+            $('.blog-masonry-container').html('')
             })
     })
 
@@ -237,10 +238,10 @@ function alignBottom(){
 function prepareSnippets(data){
     var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
     var final = ""
-    $.each(data.results,function(index,value){
+    $.each(data.data,function(index,value){
         string = string.replace('{{name}}',value.name);
         string = string.replace('{{meta}}',value.description);
-        string = string.replace('{{total}}',value.downloads);
+        string = string.replace('{{total}}',value.downloads_total);
         string = string.replace('{{repo}}',value.name);
         final += string;
         string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
@@ -250,3 +251,8 @@ function prepareSnippets(data){
     return final;
 }
 
+function init(){
+    $.get('http://internal-api.laragist.org/v1/').done(function (data) {
+        $('.blog-masonry-container').html(prepareSnippets(data))
+    })
+}
