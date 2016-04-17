@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352bfb83-4092-4e9a-9a9a-05b5b80ace29" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptss.js" afterPath="$PROJECT_DIR$/scriptss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submit.html" afterPath="$PROJECT_DIR$/submit.html" />
     </list>
     <ignored path="gistweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,16 +24,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scriptss.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scriptss.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scriptss.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="226" column="8" selection-start-line="226" selection-start-column="8" selection-end-line="226" selection-end-column="8" />
+            <state relative-caret-position="2626">
+              <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
               <folding>
-                <marker date="1460884648000" expanded="true" signature="6460:6480" placeholder="..." />
-                <marker date="1460884648000" expanded="true" signature="6507:6527" placeholder="..." />
-                <marker date="1460884648000" expanded="true" signature="7257:7277" placeholder="..." />
-                <marker date="1460884648000" expanded="true" signature="7304:7324" placeholder="..." />
+                <marker date="1460908162000" expanded="true" signature="7176:7196" placeholder="..." />
+                <marker date="1460908162000" expanded="true" signature="7223:7243" placeholder="..." />
+                <marker date="1460908162000" expanded="true" signature="7973:7993" placeholder="..." />
+                <marker date="1460908162000" expanded="true" signature="8020:8040" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -41,17 +42,17 @@
       <file leaf-file-name="submit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/submit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9334">
-              <caret line="365" column="22" selection-start-line="365" selection-start-column="22" selection-end-line="365" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="323" column="74" selection-start-line="323" selection-start-column="74" selection-end-line="323" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="3392">
               <caret line="4471" column="39" selection-start-line="4471" selection-start-column="39" selection-end-line="4471" selection-end-column="39" />
               <folding />
             </state>
@@ -66,9 +67,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/submit.html" />
         <option value="$PROJECT_DIR$/scriptss.js" />
-        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
   </component>
@@ -207,12 +208,12 @@
       <updated>1460802735667</updated>
       <workItem from="1460802737254" duration="2060000" />
       <workItem from="1460816203173" duration="705000" />
-      <workItem from="1460878624876" duration="3700000" />
+      <workItem from="1460878624876" duration="6535000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6465000" />
+    <option name="totallyTimeSpent" value="9300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -275,10 +276,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1460884648000" expanded="true" signature="6460:6480" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="6507:6527" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="7257:7277" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="7304:7324" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7176:7196" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7223:7243" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7973:7993" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="8020:8040" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -304,10 +305,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1460884648000" expanded="true" signature="6460:6480" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="6507:6527" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="7257:7277" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="7304:7324" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7176:7196" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7223:7243" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7973:7993" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="8020:8040" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -328,32 +329,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scriptss.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="226" column="8" selection-start-line="226" selection-start-column="8" selection-end-line="226" selection-end-column="8" />
-          <folding>
-            <marker date="1460884648000" expanded="true" signature="6460:6480" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="6507:6527" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="7257:7277" placeholder="..." />
-            <marker date="1460884648000" expanded="true" signature="7304:7324" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/submit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9334">
-          <caret line="365" column="22" selection-start-line="365" selection-start-column="22" selection-end-line="365" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="323" column="74" selection-start-line="323" selection-start-column="74" selection-end-line="323" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="3392">
           <caret line="4471" column="39" selection-start-line="4471" selection-start-column="39" selection-end-line="4471" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scriptss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2626">
+          <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+          <folding>
+            <marker date="1460908162000" expanded="true" signature="7176:7196" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7223:7243" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="7973:7993" placeholder="..." />
+            <marker date="1460908162000" expanded="true" signature="8020:8040" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

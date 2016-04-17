@@ -99,22 +99,41 @@ $(document).ready(function(){
     // submit pressed on search listings
     $(document).on('click','.link-text',function(){
         var modal = $("#submitModal");
-        console.log($(this).parent().parent().find('span.repo').html())
         modal.find("#name").val($(this).parent().find('span.repo').html())
+        modal.find('.modal-footer').show()
+        $('#modalError').addClass('hidden')
+        $('#modalSuccess').addClass('hidden')
+
 
     });
 
     // submit form
     $('#modalSubmit').click(function(){
         var vm = $('#submitModal')
+        $('#modalError').addClass('hidden')
+        $('#modalSuccess').addClass('hidden')
         var data = {
             name : vm.find("#name").val(),
             first_name : vm.find("#first_name").val(),
             email: vm.find("#email").val(),
             category_id: vm.find("#category_id").val()
         };
-        $.post('http://internal-api.laragist.org/v1/submit',data,function(responses){
+        $.post('http://internal-api.laragist.org/v1/submit',data).done(function(response){
 
+            var  success = $('#modalSuccess');
+            success.html("Successfully submitted!");
+            sucess.removeClass('hidden');
+            var vm = $('#submitModal');
+            vm.find('.modal-footer').hide();
+            vm.find('form').hide();
+
+        }).error(function (data) {
+           var  error = $('#modalError')
+            if(data.status >= 500)
+            error.html("Some error occurred! Please try again later.");
+            else
+                error.html(data.responseJSON.message);
+            error.removeClass('hidden')
         })
     })
 
