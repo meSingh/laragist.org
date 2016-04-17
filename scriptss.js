@@ -3,7 +3,7 @@ $(document).ready(function(){
     "use strict";
     
     // Nav Sticky
-    init();
+
 
     $(window).scroll(function(){
         if($(window).scrollTop() > 500 && !$('.mobile-toggle').is(":visible")){
@@ -100,7 +100,7 @@ $(document).ready(function(){
     // submit pressed on search listings
     $(document).on('click','.link-text',function(){
         var modal = $("#submitModal");
-        modal.find("#name").val($(this).parent().find('span.repo').html())
+        modal.find("#name").val($(this).parent().parent().find('span.repo').html())
         modal.find('.modal-footer').show()
         $('#modalError').addClass('hidden')
         $('#modalSuccess').addClass('hidden')
@@ -236,7 +236,24 @@ function alignBottom(){
 
 
 function prepareSnippets(data){
-    var string = '<div class="blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title row"><div class="col-md-10"><h1 style="margin-bottom: 10px;">{{name}}</h1> <h4 style="margin-bottom: 0px;"><p>{{meta}}</p></h4></div><div class="post-meta col-md-2 "> <span class="sub alt-font text-right">Downloads: {{total}}</span><a href="#" class="link-text text-right" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div></div>'
+    var string = '<div class="blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title row"><div class="col-md-10"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 10px;">{{name}}</h1> <h4 style="margin-bottom: 0px;"><p>{{meta}}</p></h4></div><div class="post-meta col-md-2 "> <span class="sub alt-font text-right">Downloads: {{total}}</span><a href="#" class="link-text text-right" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div></div>'
+    var final = ""
+    $.each(data.results,function(index,value){
+        string = string.replace('{{name}}',value.name);
+        string = string.replace('{{meta}}',value.description);
+        string = string.replace('{{total}}',value.downloads);
+        string = string.replace('{{repo}}',value.name);
+        final += string;
+        string = '<div class="blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title row"><div class="col-md-10"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 10px;">{{name}}</h1> <h4 style="margin-bottom: 0px;"><p>{{meta}}</p></h4></div><div class="post-meta col-md-2 "> <span class="sub alt-font text-right">Downloads: {{total}}</span><a href="#" class="link-text text-right" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div></div>'
+
+    })
+
+    return final;
+}
+
+
+function prepareSnippetsIndex(data){
+    var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
     var final = ""
     $.each(data.data,function(index,value){
         string = string.replace('{{name}}',value.name);
@@ -251,8 +268,9 @@ function prepareSnippets(data){
     return final;
 }
 
+
 function init(){
     $.get('http://internal-api.laragist.org/v1/').done(function (data) {
-        $('.blog-masonry-container').html(prepareSnippets(data))
+        $('.blog-masonry-container').html(prepareSnippetsIndex(data))
     })
 }
