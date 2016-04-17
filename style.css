@@ -4461,3 +4461,9 @@ width: 85% !important;
  nav li a:hover{
     color: #e74c3c;
 }
+
+#searchInput{
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  border-radius: 22px;
+}

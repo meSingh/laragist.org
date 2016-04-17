@@ -47,16 +47,9 @@
 						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
 							<h3 id="brand-title">A handpicked selection of top Laravel packages</h3>
                             <br>
-							<h4><a class="signup" href="#">Want yours added to the list?</a></h4>
-                            <br/>
                             <div class="row">
                               <div class="col-lg-12">
-                                <div class="input-group">
-                                  <input type="text" id="searchInput" class="form-control" placeholder="Search for...">
-                                  <span class="input-group-btn">
-                                    <button class="btn btn-default" id="search" type="button">Search</button>
-                                  </span>
-                                </div><!-- /input-group -->
+                                  <input type="text" id="searchInput" class="form-control input-lg" placeholder="Search for...">
                               </div><!-- /.col-lg-6 -->
                             </div><!-- /.row -->
                          
@@ -317,8 +310,67 @@
         <script src="bootstrap.min.js"></script>
         <script src="isotope.min.js"></script>
         <script src="scriptss.js"></script>
-    
 
+        <!-- Modal -->
+        <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Submit Package</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Name</label>
+                                    <div class="col-md-6">
+                                        <input id="name" name="name" type="text" placeholder="" class="form-control input-md" disabled="" required="">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="first_name">First Name</label>
+                                    <div class="col-md-6">
+                                        <input id="first_name" name="first_name" type="text" placeholder="" class="form-control input-md" required="">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="email">Email</label>
+                                    <div class="col-md-6">
+                                        <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
+
+                                    </div>
+                                </div>
+
+                                <!-- Select Basic -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="category_id">Select Category</label>
+                                    <div class="col-md-6">
+                                        <select id="category_id" name="category_id" class="form-control">
+                                            <option value="1">Option one</option>
+                                            <option value="2">Option two</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="modalSubmit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 </body></html>

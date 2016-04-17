@@ -75,15 +75,21 @@ $(document).ready(function(){
     }
 
     // Search Button clicked
-    $('#search').click(function(){
-        var vm = $(this)
-        var q = $('#searchInput').val();
-        vm.html('Searching...');
+    $('#searchInput').keyup(function(e){
+        var q = $(this).val();
+        if(q.length <= 2)
+            return 0
         $.get('https://packagist.org/search.json?q='+q).done(function(data){
+            $('.error').addClass('hidden')
             $('#brand-title').html(" Search Results...")
             $('.no-content').hide()
+            if(data.total == 0)
+            {
+                $('.error').removeClass('hidden')
+                $('.blog-masonry-container').html('')
+
+            }
             $('.blog-masonry-container').html(prepareSnippets(data))
-            vm.html('Search')
         }).fail(function (data) {
                 $('.no-content').show()
                 $('.error').show()
@@ -92,13 +98,25 @@ $(document).ready(function(){
 
     // submit pressed on search listings
     $(document).on('click','.link-text',function(){
-       var ele = $(this).parent()
-        var repoLink = ele.find('span.repo').html()
-        $.post('API',{repo:repoLink},function(data){
-
-        })
+        var modal = $("#submitModal");
+        console.log($(this).parent().parent().find('span.repo').html())
+        modal.find("#name").val($(this).parent().find('span.repo').html())
 
     });
+
+    // submit form
+    $('#modalSubmit').click(function(){
+        var vm = $('#submitModal')
+        var data = {
+            name : vm.find("#name").val(),
+            first_name : vm.find("#first_name").val(),
+            email: vm.find("#email").val(),
+            category_id: vm.find("#category_id").val()
+        };
+        $.post('http://internal-api.laragist.org/v1/submit',data,function(responses){
+
+        })
+    })
 
    
 });
@@ -198,14 +216,16 @@ function alignBottom(){
 
 
 function prepareSnippets(data){
-    var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text">Submit</a></div></div></div>'
+    var string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
     var final = ""
     $.each(data.results,function(index,value){
         string = string.replace('{{name}}',value.name);
         string = string.replace('{{meta}}',value.description);
         string = string.replace('{{total}}',value.downloads);
-        string = string.replace('{{repo}}',value.repository);
+        string = string.replace('{{repo}}',value.name);
         final += string;
+        string = '<div class="col-md-4 col-sm-6 blog-masonry-item Tech" ><div class="item-inner quote-post"><div class="post-title"><span class="hidden repo">{{repo}}</span><h1 style="margin-bottom: 20px;">{{name}}</h1> <h4 style="margin-bottom: 20px;">{{meta}}<p><br></p></h4><div class="post-meta"> <span class="sub alt-font">Downloads: {{total}}</span></div><a href="#" class="link-text" data-toggle="modal" data-target="#submitModal" >Submit</a></div></div></div>'
+
     })
 
     return final;
