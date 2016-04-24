@@ -56,8 +56,10 @@
                 <div class="alert alert-danger" id="modalError" v-show="error">
                 	{{error}}
                 </div>
-                <div class="alert success hidden" id="modalSuccess"></div>
-                <form class="form-horizontal">
+                <div class="alert alert-success" id="modalSuccess" v-show="submitted">
+                	Your submission has been saved and will be reviewed by our team.
+                </div>
+                <form class="form-horizontal" v-show="!submitted">
                     <fieldset>
                         <!-- Text input-->
                         <div class="form-group">
@@ -95,7 +97,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" v-on:click="submitPackage()" id="modalSubmit">Submit</button>
+                <button type="button" class="btn btn-primary" v-on:click="submitPackage()" id="modalSubmit" v-show="!submitted">Submit</button>
             </div>
         </div>
     </div>

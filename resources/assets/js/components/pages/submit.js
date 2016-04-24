@@ -9,6 +9,7 @@ module.exports = {
     		gists       : [],
     		q           : '',
             notFound    : false,
+            submitted   : false,
             selectedGist: {
 
                 name        : '',
@@ -33,12 +34,11 @@ module.exports = {
 
       			if(response.data.total >0)
       				this.gists = response.data.results;
-            else
-              {
-                this.notFound = true;
-                this.gists = [];
-              }
-
+                else
+                {
+                    this.notFound = true;
+                    this.gists = [];
+                }
 
     			console.log(response)
 
@@ -51,6 +51,7 @@ module.exports = {
         selectGist: function(gist){
             this.selectedGist.name = gist.name
             this.error = ""
+            this.submitted = false
         },
 
         submitPackage: function(){
@@ -59,7 +60,7 @@ module.exports = {
             client({path: '/submit' ,entity:this.selectedGist}).then(
                 function(response){
                     
-                // success
+                    that.submitted = true;
                 
                 },
                 function(response){
