@@ -7,6 +7,7 @@ module.exports = {
     data: function(){
     	return {
     		gists: [],
+        q: ""
     	};
     },
 
@@ -16,9 +17,13 @@ module.exports = {
 
     methods: {
     	fetchGists: function(){
-        var that = this
+
+            if(this.q.length < 3 && this.q.length > 0)
+                return
+
+            var that = this
     		// GET request
-      		client({path: '/'}).then(function (response) {
+      		client({path: '/?q='+this.q}).then(function (response) {
 
       			if(response.entity.meta.pagination.total >0)
       				that.gists = response.entity.data;
