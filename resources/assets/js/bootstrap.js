@@ -19,6 +19,7 @@ configRouter(router)
 // Configure the application
 window.config = require('./config')
 Vue.config.debug = true
+Vue.http.options.root = config.api.base_url;
 
 // Configure our HTTP client
 var rest = require('rest')

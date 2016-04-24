@@ -16,18 +16,16 @@ module.exports = {
 
     methods: {
     	fetchGists: function(){
-
+        var that = this
     		// GET request
-      		this.$http({url: 'http://internal-api.laragist.org/v1', method: 'GET'}).then(function (response) {
+      		client({path: '/'}).then(function (response) {
 
-      			if(response.data.meta.pagination.total >0)
-      				this.gists = response.data.data;
-
-    			console.log(response)
+      			if(response.entity.meta.pagination.total >0)
+      				that.gists = response.entity.data;
 
       		}, function (response) {
           		// error callback
-      		}).bind(this);
+      		});
 
     	}
     }

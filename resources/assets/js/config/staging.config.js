@@ -1,7 +1,7 @@
 var config = {
   env: 'staging',
   api: {
-    base_url: 'http://localhost:8000/api',
+    base_url: 'http://internal-api.laragist.org/v1',
     defaultRequest: {
       headers: {
         'X-Requested-With': 'rest.js',
