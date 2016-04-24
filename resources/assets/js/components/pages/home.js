@@ -6,19 +6,19 @@ module.exports = {
 
     data: function(){
     	return {
-    		gists: []
+    		gists: [],
     	};
     },
 
     created: function(){
-    	this.fetchGists();
+      this.fetchGists()
     },
 
     methods: {
     	fetchGists: function(){
-    		
+
     		// GET request
-      		this.$http({url: 'http://internal-api.laragist.org/v1/?q=dingo', method: 'GET'}).then(function (response) {
+      		this.$http({url: 'http://internal-api.laragist.org/v1', method: 'GET'}).then(function (response) {
 
       			if(response.data.meta.pagination.total >0)
       				this.gists = response.data.data;
@@ -31,4 +31,5 @@ module.exports = {
 
     	}
     }
+
 }
