@@ -15,7 +15,8 @@ module.exports = {
                 first_name  : '',
                 email       : '',
                 category_id : 0    
-            }
+            },
+            error       : ""
     	};
     },
 
@@ -49,20 +50,28 @@ module.exports = {
 
         selectGist: function(gist){
             this.selectedGist.name = gist.name
-
+            this.error = ""
         },
 
         submitPackage: function(){
+            this.error = ""
+            var that = this
             client({path: '/submit' ,entity:this.selectedGist}).then(
                 function(response){
-                
+                    
                 // success
                 
                 },
                 function(response){
                     console.log(response)
-                // error
-
+                    if(response.status.code >= 500)
+                        this.error = "Some unknown error occurred. Please try again later"
+                    else
+                        {
+                            for(var error in response.entity.errors){
+                            that.error += response.entity.errors[error][0]
+                        }
+                    }
                 }
             )
         }

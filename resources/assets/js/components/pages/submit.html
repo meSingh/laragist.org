@@ -53,7 +53,9 @@
                 <h4 class="modal-title" id="myModalLabel">Submit Package</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-danger hidden" id="modalError"></div>
+                <div class="alert alert-danger" id="modalError" v-show="error">
+                	{{error}}
+                </div>
                 <div class="alert success hidden" id="modalSuccess"></div>
                 <form class="form-horizontal">
                     <fieldset>
