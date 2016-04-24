@@ -1,7 +1,7 @@
 {
-  "name": "Laragist Frontend",
+  "name": "Laragist-Frontend",
   "version": "0.1",
-  "description": "AA handpicked selection of top Laravel packages",
+  "description": "A handpicked selection of top Laravel packages",
   "authors": [
     "Piyush Agrawal",
     "Mandeep Singh"
@@ -26,6 +26,7 @@
     "babel-runtime": "^5.8.25"
   },
   "dependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "vue-resource": "^0.7.0"
   }
 }

@@ -1,0 +1,16 @@
+
+    <div class="col-md-4 col-sm-6 blog-masonry-item Tech"
+         v-for="gist in gists">
+
+        <div class="item-inner quote-post">
+            <div class="post-title">
+                <h1 style="margin-bottom: 20px;">{{gist.name}}</h1>
+
+                <h4 style="margin-bottom: 20px;">{{gist.description}}<p><br></p></h4>
+                <div class="post-meta">
+                    <span class="sub alt-font">{{gist.cat}}</span>
+                </div>
+                <a href="{{gist.link}}" class="link-text">More Info</a>
+            </div>
+        </div>
+    </div>

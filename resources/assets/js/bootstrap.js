@@ -1,5 +1,6 @@
 // Import requirements using browserify
 window.Vue = require('vue')
+Vue.use(require('vue-resource'))
 window.VueRouter = require('vue-router')
 
 // Insert vue-router and vue-resource into Vue
@@ -8,7 +9,9 @@ window.VueRouter = require('vue-router')
 import { configRouter } from './routes'
 
 // Create our router object and set options on it
-const router = new VueRouter()
+const router = new VueRouter({
+	history: true
+})
 
 // Inject the routes into the VueRouter object
 configRouter(router)
@@ -35,6 +38,7 @@ window.client = rest.wrap(pathPrefix, { prefix: config.api.base_url })
 // Bootstrap the app
 Vue.component('nav-component', require('./compiled/nav.vue'))
 Vue.component('footer-component', require('./compiled/footer.vue'))
+Vue.component('lg-gists', require('./compiled/gists.vue'))
 const App = Vue.extend(require('./compiled/app.vue'))
 router.start(App, '#app')
 window.router = router

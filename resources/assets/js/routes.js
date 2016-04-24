@@ -38,9 +38,8 @@ module.exports = {
           }
         }
       },
-      '/dogs': {
-        component: require('./compiled/pages/dogs.vue'),
-        auth: true,
+      '/submit': {
+        component: require('./compiled/pages/submit.vue'),
         subRoutes: {
           '/': {
             component: require('./compiled/pages/dogs/index.vue')
