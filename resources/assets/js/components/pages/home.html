@@ -15,14 +15,40 @@
 	<section class="packages">
 		<div class="container">
 
+			<div class="input-group input-group-lg">
+				<input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control" placeholder="Enter 3 or more characters">
+			  	<div class="input-group-btn">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		Order by <span class="caret"></span>
+				  		</button>
+				
+				  		<ul class="dropdown-menu">
+				    		<li><a> Featured</a></li>
+				    		<li><a> Downloads</a></li>
+				    		<li><a> Created Date</a></li>
+				  		</ul>
+				  	</div>
+				  	
+				  	<div class="btn-group">
+						<button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		Category <span class="caret"></span>
+				  		</button>
+				
+				  		<ul class="dropdown-menu">
+				    		<li><a > Category one </a></li>
+				    		<li><a> Category two </a></li>
+				  		</ul>
+				  	</div>
 
-            <input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control input-lg" placeholder="Enter 3 or more characters">
+			  	</div>
+			</div>
             
             <br><br>
 
 		    <div class="package" v-for="gist in gists">
 	            <div class="info">
-	                <h3><a href="{{gist.link}}">{{gist.name}}</a></h3>
+	                <h3><a v-link="{ name: 'view', params: {author:author(gist.name), package: package(gist.name)}}">{{gist.name}}</a></h3>
 	                <p>{{gist.description}}</p>
 	                <div class="meta-info">
 	                	<ul class="list-inline">

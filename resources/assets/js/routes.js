@@ -56,6 +56,10 @@ module.exports = {
         name:'view',
         component: require('./compiled/pages/view.vue')
       },
+      '/view/:author/:package': {
+        name:'view',
+        component: require('./compiled/pages/view.vue')
+      },
       '*': {
         component: require('./compiled/pages/404.vue')
       }
