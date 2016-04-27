@@ -1,5 +1,4 @@
 <nav-component></nav-component>
-
 	<section class="welcome">
 		<div class="container">
 			<div class="row">
@@ -16,8 +15,33 @@
 	<section class="packages">
 		<div class="container">
 
-
-            <input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control input-lg" placeholder="Search the best laravel packages by entering 3 or more characters">
+			<div class="input-group input-group-lg">
+				<input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control" placeholder="Search the best laravel packages by entering 3 or more characters">
+			  	<div class="input-group-btn">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		Order by <span class="caret"></span>
+				  		</button>
+				
+				  		<ul class="dropdown-menu">
+				    		<li><a> Featured</a></li>
+				    		<li><a> Downloads</a></li>
+				    		<li><a> Created Date</a></li>
+				  		</ul>
+				  	</div>
+				  	
+				  	<div class="btn-group">
+						<button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		Category <span class="caret"></span>
+				  		</button>
+				
+				  		<ul class="dropdown-menu">
+				    		<li><a > Category one </a></li>
+				    		<li><a> Category two </a></li>
+				  		</ul>
+				  	</div>
+			  	</div>
+			</div>
 
             <br><br>
             <div class="row">
@@ -28,7 +52,7 @@
                         <span>{{ gist.version }}</span>
                     </div>
 	            <div class="info">
-	                <h3><a href="{{gist.link}}">{{gist.name}}</a></h3>
+	                <h3><a v-link="{ name: 'view', params: {author:author(gist.name), package: package(gist.name)}}">{{gist.name}}</a></h3>
 	                <p>{{gist.description}}</p>
 	            </div>
 	            <div class="meta">
@@ -74,5 +98,6 @@
 		</div><!-- End tab content -->
 	</div><!-- End tab panes col-md-9 -->
 </div><!-- End container -->
+
 
 <footer-component></footer-component>
