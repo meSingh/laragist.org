@@ -7,7 +7,7 @@
 					<img src="/images/laravel.png" style="width: 100%;">
 				</div>
 				<div class="col-md-8">
-					<h2>A handpicked selection of top Laravel packages</h2>
+					<h2><b>Laragist</b> is a <b>community-supported catalog</b> of laravel packages and libraries curated by <b>Khurafati Gang</b></h2>
 				</div>
 			</div>
 		</div>
@@ -17,19 +17,19 @@
 		<div class="container">
 
 
-            <input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control input-lg" placeholder="Enter 3 or more characters">
-            
-            <br><br>
+            <input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control input-lg" placeholder="Search the best laravel packages by entering 3 or more characters">
 
-		    <div class="package" v-for="gist in gists">
+            <br><br>
+            <div class="row">
+		    <div class="package col-md-6" v-for="gist in gists">
+                <div class="wrapper">
+                    <div class="latest">
+                        <i class="fa fa-fw fa-code-fork"></i>&nbsp; 
+                        <span>{{ gist.version }}</span>
+                    </div>
 	            <div class="info">
 	                <h3><a href="{{gist.link}}">{{gist.name}}</a></h3>
 	                <p>{{gist.description}}</p>
-	                <div class="meta-info">
-	                	<ul class="list-inline">
-	                		<li v-for="cat in gist.categories">{{cat.name}}</li>
-	                	</ul>
-	                </div>
 	            </div>
 	            <div class="meta">
 	            	<ul class="list-unstyled">
@@ -38,20 +38,26 @@
 	            			<span>{{ gist.downloads_total }}</span>
 	            		</li>
 	            		<li>
-	            			<i class="fa fa-fw fa-heart-o"></i>&nbsp; 
+	            			<i class="fa fa-fw fa-heart"></i>&nbsp; 
 	            			<span>{{ gist.favorites }}</span>
 	            		</li>
-	            		<li>
+	            		<!-- <li>
 	            			<i class="fa fa-fw fa-code"></i>&nbsp; 
 	            			<span>{{ gist.version }}</span>
-	            		</li>
-	            		<li>
-	            			<i class="fa fa-fw fa-clock-o"></i>&nbsp; 
-	            			<span>{{ gist.last_updated }}</span>
-	            		</li>
+	            		</li> -->
 	            	</ul>
 	            </div>
+                <div class="meta-info">
+                    <p class="pull-right"><small>updated on: {{ gist.last_updated }}</small></p>
+                    <ul class="list-inline">
+                        <li><i class="fa fa-fw fa-tags"></i></li>
+                        <li v-for="cat in gist.categories">{{cat.name}}</li>
+                    </ul>
+                </div>
+                </div>
 		    </div>
+
+            </div>
 
 
 		</div>

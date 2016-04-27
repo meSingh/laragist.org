@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900|Montserrat:400,700|Source+Sans+Pro:400,300,200,600,400italic,700,900|Droid+Sans:400,700|Ubuntu:400,500,400italic,700italic,700|Roboto+Slab:400,700,300|Droid+Serif:400,700|Oxygen:400,700,300|Bree+Serif|Nunito:400,700,300|Fira+Sans:400,700,500|Asap:400,700);
 @charset "UTF-8";
 
 /*
@@ -8409,7 +8410,8 @@ html {
 }
 
 body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Roboto Slab', serif;
   -webkit-font-smoothing: antialiased;
   color: #777777;
   /*background-color: #e74c3c !important;*/
@@ -8428,7 +8430,7 @@ h4,
 h5,
 h5,
 h6 {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 300;
   color: #333333;
   margin: 0px;
@@ -8437,6 +8439,10 @@ h6 {
 ul {
   list-style: none;
   padding: 0px;
+}
+
+a {
+  color: #F6635B;
 }
 
 a:hover {
@@ -8528,6 +8534,9 @@ span.text-white a {
 .welcome h2 {
   text-align: center;
   color: #FFF;
+  padding: 28px;
+  font-size: 40px;
+  line-height: 52px;
 }
 
 .packages {
@@ -8535,43 +8544,78 @@ span.text-white a {
 }
 
 .packages .package {
-  background-color: #FFF;
-  padding: 25px;
   margin-bottom: 15px;
+}
+
+.packages .package .wrapper {
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFF;
+  padding: 20px;
+  min-height: 171px;
   color: #333333;
-  min-height: 167px;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
+  /*border-left: 11px solid #F6635B;*/
+  border-radius: 4px;
+  position: relative;
+  transition: all .3s ease;
+  /*&:hover .latest { background-color: #FFF; color: #333; }*/
 }
 
-.packages .package h3 {
-  margin-bottom: 10px;
+.packages .package .wrapper .latest {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FFF;
+  background: #F6635B;
+  padding: 5px 10px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
-.packages .package h3 a {
-  font-size: 28px;
+.packages .package .wrapper h3 {
+  margin-bottom: 5px;
+}
+
+.packages .package .wrapper h3 a {
+  font-size: 24px;
   font-weight: 600;
-  line-height: 38px;
+  line-height: 32px;
   color: #333;
+  transition: all .3s ease;
 }
 
-.packages .package:hover {
+.packages .package .wrapper:hover {
   background-color: #F6635B;
   color: #FFF;
 }
 
-.packages .package:hover h3 a {
+.packages .package .wrapper:hover h3 a {
   color: #FFF;
 }
 
 .packages .package .info {
   display: inline-block;
   padding-right: 10px;
+  width: 80%;
 }
 
 .packages .package .meta {
   display: inline-block;
   float: right;
-  width: 150px;
-  padding: 0 10px;
+  width: 20%;
+  padding: 30px 0px 0px;
+}
+
+.packages .package .meta-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px 5px;
+  width: 100%;
+}
+
+.packages .package .meta-info ul {
+  margin-bottom: 0;
 }
 
 .packages .package .meta-info ul li {
@@ -8579,6 +8623,10 @@ span.text-white a {
   padding: 0 10px;
   background: RGBA(51, 51, 51, 0.1);
   margin: 0 5px;
+}
+
+.packages .package .meta-info ul:first-child {
+  font-size: 13px !important;
 }
 
 .top-bar {
@@ -8685,6 +8733,7 @@ header .container {
 header .logo {
   max-width: 200px;
   display: inline-block;
+  padding: 7px 0 0;
 }
 
 header .btn {
@@ -8739,7 +8788,14 @@ footer .footer-social-icons {
 }
 
 footer .footer-social-icons a {
-  color: #777;
+  color: #333;
+}
+
+footer .fa-heart {
+  color: red;
+  bottom: -5px;
+  position: relative;
+  padding: 0 3px;
 }
 
 footer.social h1 {
@@ -9006,10 +9062,6 @@ a {
   target: _blank;
 }
 
-i {
-  margin-bottom: 10px;
-}
-
 .signup {
   color: #333333;
 }
@@ -9044,12 +9096,12 @@ nav li {
 }
 
 nav li a {
-  /*font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-weight: bold;
-  font-size: 11px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #F6635B;
+  font-weight: 600;
 }
 
 nav li a:hover {
@@ -9058,6 +9110,7 @@ nav li a:hover {
 
 #searchInput {
   border-radius: 0;
+  border-color: #FFF;
 }
 
 #searchInput:hover,
