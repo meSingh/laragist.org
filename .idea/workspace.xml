@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352bfb83-4092-4e9a-9a9a-05b5b80ace29" name="Default" comment="">
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scriptss.js" afterPath="$PROJECT_DIR$/scriptss.js" />
     </list>
     <ignored path="gistweb.iws" />
@@ -26,6 +30,7 @@
       <file leaf-file-name="scriptss.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scriptss.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="457">
               <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
               <folding>
@@ -33,6 +38,19 @@
                 <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
                 <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
                 <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <state relative-caret-position="301">
+              <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+              <folding>
+                <marker date="1460918672000" expanded="true" signature="7205:7225" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="7252:7272" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="8002:8022" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="8049:8069" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="8539:8559" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="8586:8606" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="9339:9359" placeholder="..." />
+                <marker date="1460918672000" expanded="true" signature="9386:9406" placeholder="..." />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
               </folding>
             </state>
           </provider>
@@ -200,12 +218,20 @@
       <workItem from="1460802737254" duration="2060000" />
       <workItem from="1460816203173" duration="705000" />
       <workItem from="1460878624876" duration="7730000" />
+<<<<<<< HEAD
       <workItem from="1460917417686" duration="450000" />
+=======
+      <workItem from="1460917417686" duration="655000" />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="10945000" />
+=======
+    <option name="totallyTimeSpent" value="11150000" />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -215,18 +241,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -268,10 +294,21 @@
         <state relative-caret-position="2314">
           <caret line="89" column="53" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
           <folding>
+<<<<<<< HEAD
             <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <marker date="1460918672000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8002:8022" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8049:8069" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8539:8559" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8586:8606" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9339:9359" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9386:9406" placeholder="..." />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
           </folding>
         </state>
       </provider>
@@ -305,10 +342,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <marker date="1460918672000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8002:8022" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8049:8069" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8539:8559" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8586:8606" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9339:9359" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9386:9406" placeholder="..." />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
           </folding>
         </state>
       </provider>
@@ -334,10 +382,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1460918468000" expanded="true" signature="7205:7225" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+            <marker date="1460918672000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8002:8022" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8049:8069" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8539:8559" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8586:8606" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9339:9359" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9386:9406" placeholder="..." />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
           </folding>
         </state>
       </provider>
@@ -400,6 +459,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scriptss.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="457">
           <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
           <folding>
@@ -407,6 +467,19 @@
             <marker date="1460918468000" expanded="true" signature="7252:7272" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8005:8025" placeholder="..." />
             <marker date="1460918468000" expanded="true" signature="8052:8072" placeholder="..." />
+=======
+        <state relative-caret-position="301">
+          <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+          <folding>
+            <marker date="1460918672000" expanded="true" signature="7205:7225" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="7252:7272" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8002:8022" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8049:8069" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8539:8559" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="8586:8606" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9339:9359" placeholder="..." />
+            <marker date="1460918672000" expanded="true" signature="9386:9406" placeholder="..." />
+>>>>>>> 667af9e9c69296fb94a73d5bd8eecb06d9957372
           </folding>
         </state>
       </provider>
