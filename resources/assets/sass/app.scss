@@ -29,45 +29,10 @@ $navbar-height: 65px;
 @import "elements/tables";
 @import "elements/tooltips";
 @import "style";
+@import "responsive";
 
 /**
  * Components
  */
 
 @import "components/tabs";
-
-/*
- * Misc.
- */
-
-html {
-	min-height: 100%;
-	position: relative;
-}
-
-body {
-	font-weight: 300;
-	margin-bottom: 80px;
-}
-
-.footer {
-	background-color: #f5f5f5;
-	border-top: 1px solid #e7e7e7;
-	bottom: 0;
-	height: 80px;
-	position: absolute;
-	width: 100%;
-
-	.footer-social-icons {
-		font-size: 32px;
-		padding-top: 18px;
-
-		a {
-			color: #777;
-		}
-	}
-}
-
-[v-cloak] {
-    display: none;
-}

@@ -1,39 +1,54 @@
 <nav-component></nav-component>
-<div class="main-container">
-	<section class="blog-masonry bg-muted first-child" style="padding-top: 50px;">
 
+	<section class="welcome">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
-					<h3>A handpicked selection of top Laravel packages</h3>
-					<br>
-					<h4><a class="signup" href="#">Want yours added to the list?</a></h4>
-
+				<div class="col-md-3 col-md-offset-1">
+					<img src="/images/laravel.png" style="width: 100%;">
+				</div>
+				<div class="col-md-8">
+					<h2>A handpicked selection of top Laravel packages</h2>
 				</div>
 			</div>
 		</div>
+	</section>
 
-
+	<section class="packages">
 		<div class="container">
 			<div class="row">
-				<div class="blog-masonry-container">
-						    <div class="col-md-4 col-sm-6 blog-masonry-item Tech"
-						         v-for="gist in gists">
 
-						        <div class="item-inner quote-post">
-						            <div class="post-title">
-						                <h1 style="margin-bottom: 20px;">{{gist.name}}</h1>
+			    <div class="package" v-for="gist in gists">
+		            <div class="info">
+		                <h3><a href="{{gist.link}}">{{gist.name}}</a></h3>
+		                <p>{{gist.description}}</p>
+		                <div class="meta-info">
+		                	<ul class="list-inline">
+		                		<li v-for="cat in gist.categories">{{cat.name}}</li>
+		                	</ul>
+		                </div>
+		            </div>
+		            <div class="meta">
+		            	<ul class="list-unstyled">
+		            		<li>
+		            			<i class="fa fa-fw fa-download"></i>&nbsp; 
+		            			<span>{{ gist.downloads_total }}</span>
+		            		</li>
+		            		<li>
+		            			<i class="fa fa-fw fa-heart-o"></i>&nbsp; 
+		            			<span>{{ gist.favorites }}</span>
+		            		</li>
+		            		<li>
+		            			<i class="fa fa-fw fa-code"></i>&nbsp; 
+		            			<span>{{ gist.version }}</span>
+		            		</li>
+		            		<li>
+		            			<i class="fa fa-fw fa-clock-o"></i>&nbsp; 
+		            			<span>{{ gist.last_updated }}</span>
+		            		</li>
+		            	</ul>
+		            </div>
+			    </div>
 
-						                <h4 style="margin-bottom: 20px;">{{gist.description}}<p><br></p></h4>
-						                <div class="post-meta">
-						                    <span class="sub alt-font">{{gist.cat}}</span>
-						                </div>
-						                <a href="{{gist.link}}" class="link-text">More Info</a>
-						            </div>
-						        </div>
-						    </div>
-
-				</div>
 			</div>
 		</div>
 
@@ -43,7 +58,7 @@
 
 
 
-</div>
+
 	<!-- Tab Panes -->
 	<div class="col-md-9">
 		<div class="tab-content">
