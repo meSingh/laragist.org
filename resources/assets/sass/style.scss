@@ -582,7 +582,7 @@ width: 85% !important;
 
  nav li a{
     /*font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-        font-weight: bold;
+    font-weight: bold;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -594,9 +594,9 @@ width: 85% !important;
 }
 
 #searchInput{
-  -webkit-border-radius: 22px;
-  -moz-border-radius: 22px;
-  border-radius: 22px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 
 }
 

@@ -1,62 +1,104 @@
 <nav-component></nav-component>
-
 <div class="main-container">
-            <section class="blog-masonry bg-muted first-child" style="padding-top: 50px;">
-            
-            	<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
-							<h3 id="brand-title">A handpicked selection of top Laravel packages</h3>
-                            <br>
-                            <div class="row">
-                              <div class="col-lg-12">
-                                  <input type="text" id="searchInput" v-model="q" v-on:keyup="search()" class="form-control input-lg" placeholder="Search for...">
-                              </div><!-- /.col-lg-6 -->
-                            </div><!-- /.row -->
-                         
-						</div>
-					</div>
-				</div>
-			
-				<div class="container">
-                    
-					<div class="row">
-						<div class="col-sm-12 text-center">
-                            <br/>
-                            <div class="alert alert-danger error hidden"> :( Nothing found! Please try searching with different keyword</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="container">
-					<div class="row">
-
-						<div class="blog-masonry-container" style="position: relative;">
-
-
-						    <div class="col-md-4 col-sm-6 blog-masonry-item Tech"
-						         v-for="gist in gists">
-
-						        <div class="item-inner quote-post">
-						            <div class="post-title">
-						                <h1 style="margin-bottom: 20px;">{{gist.name}}</h1>
-
-						                <h4 style="margin-bottom: 20px;">{{gist.description}}<p><br></p></h4>
-						                <div class="post-meta">
-						                    <span class="sub alt-font">{{gist.cat}}</span>
-						                </div>
-						                <a href="{{gist.link}}" class="link-text">More Info</a>
-						            </div>
-						        </div>
-						    </div>
-
-
-						</div>
-					</div>
-				</div>
-
-			</section>
-				
-		</div>
-
+    <section class="blog-masonry bg-muted first-child" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+                    <h3 id="brand-title">A handpicked selection of top Laravel packages</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" id="searchInput" v-model="q" v-on:keyup="search()" class="form-control input-lg" placeholder="Search for...">
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <br/>
+                    <div class="alert alert-danger" v-show="notFound"> :( Nothing found! Please try searching with different keyword</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="blog-masonry-container" style="position: relative;">
+                    <div class="col-md-4 col-sm-6 blog-masonry-item Tech" v-for="gist in gists">
+                        <div class="item-inner quote-post">
+                            <div class="post-title">
+                                <h1 style="margin-bottom: 20px;">{{gist.name}}</h1>
+                                <h4 style="margin-bottom: 20px;">{{gist.description}}<p><br></p></h4>
+                                <div class="post-meta">
+                                    <span class="sub alt-font">{{gist.cat}}</span>
+                                </div>
+                                <a href="{{gist.link}}" data-toggle="modal" data-target="#submitModal" class="link-text" v-on:click="selectGist(gist)">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 <footer-component></footer-component>
+<div class="modal fade in" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">Submit Package</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" id="modalError" v-show="error">
+                	{{error}}
+                </div>
+                <div class="alert alert-success" id="modalSuccess" v-show="submitted">
+                	Your submission has been saved and will be reviewed by our team.
+                </div>
+                <form class="form-horizontal" v-show="!submitted">
+                    <fieldset>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="name">Name</label>
+                            <div class="col-md-6">
+                                <input id="name" name="name" type="text" placeholder="" class="form-control input-md" disabled="" required="" v-model="selectedGist.name">
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="first_name">First Name</label>
+                            <div class="col-md-6">
+                                <input id="first_name" name="first_name" type="text" placeholder="" class="form-control input-md" required="" v-model="selectedGist.first_name">
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Email</label>
+                            <div class="col-md-6">
+                                <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="" v-model="selectedGist.email">
+                            </div>
+                        </div>
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="category_id">Select Category</label>
+                            <div class="col-md-6">
+                                <select id="category_id" name="category_id" class="form-control" v-model="selectedGist.category_id">
+                                    <option value="1">Option one</option>
+                                    <option value="2">Option two</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" v-on:click="submitPackage()" id="modalSubmit" v-show="!submitted">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

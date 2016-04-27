@@ -9057,7 +9057,7 @@ nav li a:hover {
 }
 
 #searchInput {
-  border-radius: 22px;
+  border-radius: 0;
 }
 
 #searchInput:hover,

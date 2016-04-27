@@ -15,49 +15,47 @@
 
 	<section class="packages">
 		<div class="container">
-			<div class="row">
 
-			    <div class="package" v-for="gist in gists">
-		            <div class="info">
-		                <h3><a href="{{gist.link}}">{{gist.name}}</a></h3>
-		                <p>{{gist.description}}</p>
-		                <div class="meta-info">
-		                	<ul class="list-inline">
-		                		<li v-for="cat in gist.categories">{{cat.name}}</li>
-		                	</ul>
-		                </div>
-		            </div>
-		            <div class="meta">
-		            	<ul class="list-unstyled">
-		            		<li>
-		            			<i class="fa fa-fw fa-download"></i>&nbsp; 
-		            			<span>{{ gist.downloads_total }}</span>
-		            		</li>
-		            		<li>
-		            			<i class="fa fa-fw fa-heart-o"></i>&nbsp; 
-		            			<span>{{ gist.favorites }}</span>
-		            		</li>
-		            		<li>
-		            			<i class="fa fa-fw fa-code"></i>&nbsp; 
-		            			<span>{{ gist.version }}</span>
-		            		</li>
-		            		<li>
-		            			<i class="fa fa-fw fa-clock-o"></i>&nbsp; 
-		            			<span>{{ gist.last_updated }}</span>
-		            		</li>
-		            	</ul>
-		            </div>
-			    </div>
 
-			</div>
+            <input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control input-lg" placeholder="Enter 3 or more characters">
+            
+            <br><br>
+
+		    <div class="package" v-for="gist in gists">
+	            <div class="info">
+	                <h3><a href="{{gist.link}}">{{gist.name}}</a></h3>
+	                <p>{{gist.description}}</p>
+	                <div class="meta-info">
+	                	<ul class="list-inline">
+	                		<li v-for="cat in gist.categories">{{cat.name}}</li>
+	                	</ul>
+	                </div>
+	            </div>
+	            <div class="meta">
+	            	<ul class="list-unstyled">
+	            		<li>
+	            			<i class="fa fa-fw fa-download"></i>&nbsp; 
+	            			<span>{{ gist.downloads_total }}</span>
+	            		</li>
+	            		<li>
+	            			<i class="fa fa-fw fa-heart-o"></i>&nbsp; 
+	            			<span>{{ gist.favorites }}</span>
+	            		</li>
+	            		<li>
+	            			<i class="fa fa-fw fa-code"></i>&nbsp; 
+	            			<span>{{ gist.version }}</span>
+	            		</li>
+	            		<li>
+	            			<i class="fa fa-fw fa-clock-o"></i>&nbsp; 
+	            			<span>{{ gist.last_updated }}</span>
+	            		</li>
+	            	</ul>
+	            </div>
+		    </div>
+
+
 		</div>
-
-
-
 	</section>
-
-
-
 
 	<!-- Tab Panes -->
 	<div class="col-md-9">
@@ -70,4 +68,5 @@
 		</div><!-- End tab content -->
 	</div><!-- End tab panes col-md-9 -->
 </div><!-- End container -->
+
 <footer-component></footer-component>
