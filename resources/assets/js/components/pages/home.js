@@ -24,7 +24,7 @@ module.exports = {
             var that = this
     		// GET request
       		client({path: '/?q='+this.q}).then(function (response) {
-
+            console.log(response)
       			if(response.entity.meta.pagination.total >0)
       				that.gists = response.entity.data;
 

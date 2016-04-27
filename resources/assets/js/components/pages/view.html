@@ -1,19 +1,36 @@
 <nav-component></nav-component>
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <h2><b>{{ user }}/{{ name }}</b></h2>
+                    <p><i class="fa fa-download"></i> composer install {{ user }}/{{ name }}</p>
+                </div>
+                <div class="col-md-7">
+                    <h2>{{gist.description}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 <div class="main-container ">
     <section class="blog-masonry bg-muted first-child" style="padding-top: 50px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <h1> lorem lore ipsum</h1>
+                    <h1> ReadMe</h1>
+                    <p class="lead">{{readme}}</p>
                 </div>
                 <div class="col-sm-4">
                     <div class="blog-masonry-item Tech">
                         <div class="item-inner quote-post">
                             <div class="post-title">
                                 <h1 style="margin-bottom: 20px;">lorem</h1>
-                                <h4 style="margin-bottom: 20px;">lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<p><br></p></h4>
-                                <div class="post-meta">
-                                    <span class="sub alt-font">{{gist.cat}}</span>
+                                <a href="{{gist.repository}}"> <h4>{{gist.repository }}</h4> </a>
+
+                                <div class="">
+                                    <ul>
+                                        <li v-for="version in gist.versions"> {{version.version}}</li>
+                                    </ul>
                                 </div>
                                 <a v-link="{ path: '/view', params : {id:1}}" class="link-text">More Info</a>
                             </div>

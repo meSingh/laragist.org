@@ -52,7 +52,7 @@
                         <span>{{ gist.version }}</span>
                     </div>
 	            <div class="info">
-	                <h3><a v-link="{ name: 'view', params: {author:author(gist.name), package: package(gist.name)}}">{{gist.name}}</a></h3>
+	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{gist.name}}</a></h3>
 	                <p>{{gist.description}}</p>
 	            </div>
 	            <div class="meta">
