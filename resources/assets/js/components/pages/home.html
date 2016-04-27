@@ -28,7 +28,7 @@
                                 <div class="post-meta">
                                     <span class="sub alt-font">{{gist.cat}}</span>
                                 </div>
-                                <a href="{{gist.link}}" class="link-text">More Info</a>
+                                <a v-link="{ name: 'view', params : {author:author(gist.name), package: package(gist.name)}}" class="link-text">More Info</a>
                             </div>
                         </div>
                     </div>

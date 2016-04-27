@@ -32,7 +32,15 @@ module.exports = {
           		// error callback
       		});
 
-    	}
+    	},
+
+      author: function(name){
+        return name.split('/')[0];
+      },
+
+      package: function(name){
+        return name.split('/')[1];
+      }
     }
 
 }

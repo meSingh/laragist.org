@@ -52,8 +52,9 @@ module.exports = {
           }
         }
       },
-      '/terms': {
-        component: require('./compiled/pages/terms.vue')
+      '/view/:author/:package': {
+        name:'view',
+        component: require('./compiled/pages/view.vue')
       },
       '*': {
         component: require('./compiled/pages/404.vue')
