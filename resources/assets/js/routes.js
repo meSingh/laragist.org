@@ -52,11 +52,7 @@ module.exports = {
           }
         }
       },
-      '/view/:author/:package': {
-        name:'view',
-        component: require('./compiled/pages/view.vue')
-      },
-      '/view/:author/:package': {
+      '/packages/:user/:name': {
         name:'view',
         component: require('./compiled/pages/view.vue')
       },

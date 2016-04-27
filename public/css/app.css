@@ -8538,6 +8538,11 @@ span.text-white a {
   line-height: 45px;
 }
 
+.welcome p {
+  color: #FFF;
+  padding: 15px 45px;
+}
+
 .packages {
   padding: 50px 0;
 }
@@ -8588,6 +8593,10 @@ span.text-white a {
   color: #FFF;
 }
 
+.packages .package .wrapper:hover .meta-info .submit a {
+  color: #fff;
+}
+
 .packages .package .wrapper:hover h3 a {
   color: #FFF;
 }
@@ -8611,6 +8620,14 @@ span.text-white a {
   left: 0;
   padding: 0 20px 5px;
   width: 100%;
+}
+
+.packages .package .meta-info .submit a {
+  outline: none;
+}
+
+.packages .package .meta-info .submit a:hover {
+  color: #fff;
 }
 
 .packages .package .meta-info ul {
@@ -9116,6 +9133,13 @@ nav li a:hover {
 #searchInput:focus {
   box-shadow: none;
   border-color: #F14A49;
+}
+
+.alert-danger {
+  background-color: #F6635B;
+  color: #fff;
+  border: none;
+  font-size: 18px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
