@@ -1,4 +1,20 @@
-<nav-component></nav-component>
+    <nav-component></nav-component>
+
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-md-offset-1">
+                    <img src="/images/packagist.png" style="width: 70%;margin-left: 15%;">
+                </div>
+                <div class="col-md-8">
+                    <h2>Search <b>Packagist.org</b> for laravel packages and submit them to us.</h2>
+                    <input type="text" id="searchInput" v-model="q" v-on:keyup="search()" class="form-control input-lg" placeholder="Search for..." style="margin-top: 30px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 <div class="main-container">
     <section class="blog-masonry bg-muted first-child" style="padding-top: 50px;">
         <div class="container">
@@ -8,7 +24,7 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="text" id="searchInput" v-model="q" v-on:keyup="search()" class="form-control input-lg" placeholder="Search for...">
+                            
                         </div>
                         <!-- /.col-lg-6 -->
                     </div>
