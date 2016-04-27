@@ -1,0 +1,104 @@
+    <nav-component></nav-component>
+
+	<section class="welcome">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-md-offset-1">
+					<img src="/images/laravel.png" style="width: 100%;">
+				</div>
+				<div class="col-md-8">
+					<h2><b>Laragist</b> is a <b>community-supported catalog</b> of laravel packages and libraries curated by <b>Khurafati Gang</b></h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="packages">
+		<div class="container">
+
+			<div class="input-group input-group-lg">
+				<input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control" placeholder="Search the best laravel packages by entering 3 or more characters">
+			  	<div class="input-group-btn">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		Sort by <span class="caret"></span>
+				  		</button>
+				
+				  		<ul class="dropdown-menu">
+				    		<li><a> Most Downloaded</a></li>
+                            <li><a> Most Popular</a></li>
+				    		<li><a> Recently Updated</a></li>
+				  		</ul>
+				  	</div>
+				  	
+				  	<div class="btn-group">
+						<button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		Category <span class="caret"></span>
+				  		</button>
+				
+				  		<ul class="dropdown-menu">
+				    		<li><a > Category one </a></li>
+				    		<li><a> Category two </a></li>
+				  		</ul>
+				  	</div>
+			  	</div>
+			</div>
+
+            <br><br>
+            <div class="row">
+		    <div class="package col-md-6" v-for="gist in gists">
+                <div class="wrapper">
+                    <div class="latest">
+                        <i class="fa fa-fw fa-code-fork"></i>&nbsp; 
+                        <span>{{ gist.version }}</span>
+                    </div>
+	            <div class="info">
+	                <h3><a v-link="{ name: 'view', params: {author:author(gist.name), package: package(gist.name)}}">{{gist.name}}</a></h3>
+	                <p>{{gist.description}}</p>
+	            </div>
+	            <div class="meta">
+	            	<ul class="list-unstyled">
+	            		<li>
+	            			<i class="fa fa-fw fa-download"></i>&nbsp; 
+	            			<span>{{ gist.downloads_total }}</span>
+	            		</li>
+	            		<li>
+	            			<i class="fa fa-fw fa-heart"></i>&nbsp; 
+	            			<span>{{ gist.favorites }}</span>
+	            		</li>
+	            		<!-- <li>
+	            			<i class="fa fa-fw fa-code"></i>&nbsp; 
+	            			<span>{{ gist.version }}</span>
+	            		</li> -->
+	            	</ul>
+	            </div>
+                <div class="meta-info">
+                    <p class="pull-right"><small>updated on: {{ gist.last_updated }}</small></p>
+                    <ul class="list-inline">
+                        <li><i class="fa fa-fw fa-tags"></i></li>
+                        <li v-for="cat in gist.categories">{{cat.name}}</li>
+                    </ul>
+                </div>
+                </div>
+		    </div>
+
+            </div>
+
+
+		</div>
+	</section>
+
+	<!-- Tab Panes -->
+	<div class="col-md-9">
+		<div class="tab-content">
+			<div class="tab-pane">
+				<div class="panel panel-default">
+					<router-view></router-view>
+				</div>
+			</div><!-- End tab panel -->
+		</div><!-- End tab content -->
+	</div><!-- End tab panes col-md-9 -->
+</div><!-- End container -->
+
+
+<footer-component></footer-component>
