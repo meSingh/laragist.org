@@ -31,6 +31,9 @@ var errorCode = require('rest/interceptor/errorCode')
 var interceptor = require('rest/interceptor')
 var jwtAuth = require('./interceptors/jwtAuth')
 
+var showdown  = require('showdown');
+window.converter = new showdown.Converter();
+
 window.client = rest.wrap(pathPrefix, { prefix: config.api.base_url })
                     .wrap(mime)
                     .wrap(defaultRequest, config.api.defaultRequest)

@@ -32,16 +32,19 @@ module.exports = {
             var that =this
             this.$http({url: 'https://raw.githubusercontent.com/'+this.user+'/'+this.name+'/master/readme.md'}).then(
                 function(response){
-                    console.log(response.data)
-                    that.readme = response.data;
+                    that.readme = converter.makeHtml(response.data);
                 },
                 function(errorResponse){
                     this.$http({url: 'https://raw.githubusercontent.com/'+this.user+'/'+this.name+'/master/README.md'}).then(
                         function(response){
-                            that.readme = response.data;
-                        })
+                            that.readme = converter.makeHtml(response.data);                        })
 
                 })
+        },
+
+        toHtml: function(content){
+            alert("sdsd");
+            console.log(markdown.toHTML(content));
         }
 
     }
