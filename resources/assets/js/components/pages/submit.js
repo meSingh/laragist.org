@@ -17,7 +17,12 @@ module.exports = {
                 email       : '',
                 category_id : 0    
             },
-            error       : ""
+            error       : "",
+            errors      : {
+                first_name: "",
+                email: "",
+                category_id: ""
+            }
     	};
     },
 
@@ -51,11 +56,21 @@ module.exports = {
         selectGist: function(gist){
             this.selectedGist.name = gist.name
             this.error = ""
+            this.errors = {
+                first_name: "",
+                email: "",
+                category_id: ""
+            }
             this.submitted = false
         },
 
         submitPackage: function(){
             this.error = ""
+            this.errors     = {
+                first_name: "",
+                email: "",
+                category_id: ""
+            }
             var that = this
             client({path: '/submit' ,entity:this.selectedGist}).then(
                 function(response){
@@ -65,15 +80,19 @@ module.exports = {
                 },
                 function(response){
                     console.log(response)
-                    if(response.status.code >= 500)
-                        this.error = "Some unknown error occurred. Please try again later"
-                    else
+                    if(response.status.code == 400)
+                        that.error = response.entity.message;
+                    else if(response.status.code >= 500)
+                        that.error = "Some unknown error occurred. Please try again later"
+                    else if(response.status.code = 422)
                         {
-                            for(var error in response.entity.errors){
-                            that.error += response.entity.errors[error][0]
+                            that.errors.first_name = response.entity.errors.first_name;
+                            that.errors.email = response.entity.errors.email;
+                            that.errors.category_id = response.entity.errors.category_id;
+                            console.log(that.errors);
                         }
                     }
-                }
+
             )
         }
 
