@@ -140,6 +140,11 @@ span.text-white a {
             color: #333;
             border-color: #333;
         }
+
+        &:active{
+          color: #333;
+          border-color: #333;
+        }
     }
 }
 
@@ -883,7 +888,7 @@ width: 85% !important;
     letter-spacing: 1px;
     color: #F6635B;
     font-weight: 600;
-    border-bottom: 1px solid #F6635B;
+    // border-bottom: 1px solid #F6635B;    
 }
 
  nav li a:hover{
@@ -912,6 +917,14 @@ width: 85% !important;
     color: #fff;
     border: none;
     font-size: 18px;
+}
+
+.click-pointer{
+  cursor: pointer;
+}
+
+.no-outline{
+  outline:none;
 }
 
 

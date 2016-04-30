@@ -86,9 +86,9 @@
                         <div class="version block">
 
                             <h5>
-                                {{ gist.version }}
+                                {{ version.version }}
                                 <span class="pull-right">
-                                    {{ gist.last_updated }}
+                                    {{ gist.time }}
                                 </span>
                             </h5>
                             
@@ -96,13 +96,56 @@
 
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h4>Requires</h4><hr>
+                                    <h4>requires</h4><hr>
+                                    <ul>
+                                        <li v-for="(package, number) in version.require">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="col-md-4">
-                                    <h4>Requires (Dev)</h4><hr>
+                                    <h4>requires (dev)</h4><hr>
+                                    <ul>
+                                        <li v-for="(package, number) in version.require-dev">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="col-md-4">
-                                    <h4>Requires</h4><hr>
+                                    <h4>suggests</h4><hr>
+                                    <ul>
+                                        <li v-for="(package, number) in version.suggests">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h4>provides</h4><hr>
+                                    <ul>
+                                        <li v-for="(package, number) in version.provides">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4>conflicts</h4><hr>
+                                    <ul>
+                                        <li v-for="(package, number) in version.conflicts">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4>replaces</h4><hr>
+                                    <ul>
+                                        <li v-for="(package, number) in version.replaces">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
                                 </div>
 
                             </div>
