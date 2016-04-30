@@ -8417,7 +8417,7 @@ body {
   /*background-color: #e74c3c !important;*/
   /*background-color: #2c3e50 !important;*/
   /*background-color: #F6635B !important;*/
-  background-color: #f4f4f4 !important;
+  background-color: #F8F8F8 !important;
   font-size: 14px;
   line-height: 24px;
   padding-top: 65px;
@@ -8558,10 +8558,9 @@ span.text-white a {
   min-height: 171px;
   color: #333333;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
-  /*border-left: 11px solid #F6635B;*/
   border-radius: 4px;
   position: relative;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   /*&:hover .latest { background-color: #FFF; color: #333; }*/
 }
 
@@ -8574,6 +8573,8 @@ span.text-white a {
   padding: 5px 10px;
   border-top-right-radius: 4px;
   border-bottom-left-radius: 4px;
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .packages .package .wrapper h3 {
@@ -8585,7 +8586,7 @@ span.text-white a {
   font-weight: 600;
   line-height: 32px;
   color: #333;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .packages .package .wrapper:hover {
@@ -8593,28 +8594,28 @@ span.text-white a {
   color: #FFF;
 }
 
-.packages .package .wrapper:hover .meta-info .submit a {
-  color: #fff;
+.packages .package .wrapper:hover .latest {
+  background-color: #F14036;
 }
 
 .packages .package .wrapper:hover h3 a {
   color: #FFF;
 }
 
-.packages .package .info {
+.packages .package .wrapper .info {
   display: inline-block;
   padding-right: 10px;
   width: 80%;
 }
 
-.packages .package .meta {
+.packages .package .wrapper .meta {
   display: inline-block;
   float: right;
   width: 20%;
   padding: 30px 0px 0px;
 }
 
-.packages .package .meta-info {
+.packages .package .wrapper .meta-info {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -8622,27 +8623,56 @@ span.text-white a {
   width: 100%;
 }
 
-.packages .package .meta-info .submit a {
-  outline: none;
-}
-
-.packages .package .meta-info .submit a:hover {
-  color: #fff;
-}
-
-.packages .package .meta-info ul {
+.packages .package .wrapper .meta-info ul {
   margin-bottom: 0;
 }
 
-.packages .package .meta-info ul li {
+.packages .package .wrapper .meta-info ul li {
   font-size: 11px;
   padding: 0 10px;
   background: RGBA(51, 51, 51, 0.1);
   margin: 0 5px;
 }
 
-.packages .package .meta-info ul:first-child {
+.packages .package .wrapper .meta-info ul:first-child {
   font-size: 13px !important;
+}
+
+.packages .package .submit-wrapper {
+  min-height: 126px;
+}
+
+.packages .package .submit-wrapper .submit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #FFF;
+  background: #F6635B;
+  padding: 5px 15px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.packages .package .submit-wrapper .submit a {
+  color: #FFF;
+}
+
+.packages .package .submit-wrapper:hover .submit {
+  background-color: #F14036;
+}
+
+.packages .package .submit-wrapper:hover .submit a {
+  color: #fff;
+}
+
+.packages .package .submit-wrapper .meta {
+  padding: 0;
+}
+
+.packages .package .submit-wrapper .meta-info {
+  padding: 0 20px 10px;
 }
 
 .top-bar {
