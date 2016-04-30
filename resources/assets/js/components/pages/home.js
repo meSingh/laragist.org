@@ -6,13 +6,15 @@ module.exports = {
 
     data: function(){
     	return {
-    		gists: [],
-        q: ""
+    		gists:      [],
+        q:          "",
+        categories: []
     	};
     },
 
     created: function(){
       this.fetchGists()
+      this.getCategories()
     },
 
     methods: {
@@ -33,6 +35,18 @@ module.exports = {
       		});
 
     	},
+
+        getCategories : function(){
+            var that = this
+            client({path: '/categories'}).then(function (response) {
+                console.log(response);
+                that.categories = response.entity.data;
+
+              }, function (response) {
+                  // error callback
+               });
+
+      },
 
       author: function(name){
         return name.split('/')[0];
