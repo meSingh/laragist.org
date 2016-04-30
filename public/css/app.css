@@ -8559,6 +8559,11 @@ span.text-white a {
   border-color: #333;
 }
 
+.categories li a:active {
+  color: #333;
+  border-color: #333;
+}
+
 .packages {
   padding: 50px 0;
 }
@@ -9257,6 +9262,14 @@ nav li a:hover {
   color: #fff;
   border: none;
   font-size: 18px;
+}
+
+.click-pointer {
+  cursor: pointer;
+}
+
+.no-outline {
+  outline: none;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {

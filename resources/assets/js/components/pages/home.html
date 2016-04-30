@@ -19,13 +19,14 @@
 
 
             <div class="categories">
-                <ul class="list-inline"> 
+                <ul class="list-inline"  > 
              
-                    <li><a href="@">Authentication</a></li>
-                    <li><a href="@">Authentication</a></li>
-                    <li><a href="@">Authentication</a></li>
-                    <li><a href="@">Authentication</a></li>
-                    <li><a href="@">Authentication</a></li>
+                    <li v-for="category in categories" >
+                        <a  v-bind:class="{'active': category.clicked }"
+                            v-on:click="selectCategory(category)" >
+                                {{category.name}}
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -33,28 +34,29 @@
 			<div class="input-group input-group-lg">
 				<input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control" placeholder="Search the best laravel packages by entering 3 or more characters">
 			  	<div class="input-group-btn">
-					<div class="btn-group">
-						<button type="button" class="btn btn-default btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    		Sort by <span class="caret"></span>
+
+						<button type="button" class="btn btn-default no-outline" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    		{{ sortedAs }} <span class="caret"></span>
 				  		</button>
 				
-				  		<ul class="dropdown-menu">
-				    		<li><a> Most Downloaded</a></li>
-                            <li><a> Most Popular</a></li>
-				    		<li><a> Recently Updated</a></li>
+				  		<ul class="dropdown-menu click-pointer">
+				    		<li>
+                                <a v-on:click="sort('md','Most Downloaded')"> 
+                                    Most Downloaded
+                                </a>
+                            </li>
+                            <li>
+                                <a v-on:click="sort('mp','Most Popular')">
+                                    Most Popular
+                                </a>
+                            </li>
+				    		<li>
+                                <a v-on:click="sort('ru','Recently Updated')">
+                                    Recently Updated
+                                </a>
+                            </li>
 				  		</ul>
-				  	</div>
 				  	
-				  	<div class="btn-group">
-						<button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    		Category <span class="caret"></span>
-				  		</button>
-				
-				  		<ul class="dropdown-menu">
-				    		<li><a > Category one </a></li>
-				    		<li><a> Category two </a></li>
-				  		</ul>
-				  	</div>
 			  	</div>
 			</div>
 

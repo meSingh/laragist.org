@@ -140,6 +140,11 @@ span.text-white a {
             color: #333;
             border-color: #333;
         }
+
+        &:active{
+          color: #333;
+          border-color: #333;
+        }
     }
 }
 
@@ -825,6 +830,14 @@ width: 85% !important;
     color: #fff;
     border: none;
     font-size: 18px;
+}
+
+.click-pointer{
+  cursor: pointer;
+}
+
+.no-outline{
+  outline:none;
 }
 
 
