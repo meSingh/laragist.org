@@ -81,7 +81,7 @@
             </div>
             <div class="modal-body">
                 <div class="alert alert-danger" id="modalError" v-show="error">
-                    {{error}}
+                    {{{error}}}
                 </div>
                 <div class="alert alert-success" id="modalSuccess" v-show="submitted">
                     Your submission has been saved and will be reviewed by our team.
@@ -96,27 +96,32 @@
                             </div>
                         </div>
                         <!-- Text input-->
-                        <div class="form-group">
+                        <div class="form-group" v-bind:class="{'has-error': errors.first_name}">
                             <label class="col-md-4 control-label" for="first_name">First Name</label>
                             <div class="col-md-6">
                                 <input id="first_name" name="first_name" type="text" placeholder="" class="form-control input-md" required="" v-model="selectedGist.first_name">
+                                <span class="help-block" v-show="errors.first_name">{{ errors.first_name[0] }}</span>
                             </div>
                         </div>
                         <!-- Text input-->
-                        <div class="form-group">
+                        <div class="form-group" v-bind:class="{'has-error': errors.email}">
                             <label class="col-md-4 control-label" for="email">Email</label>
                             <div class="col-md-6">
                                 <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="" v-model="selectedGist.email">
+                                <span class="help-block" v-show="errors.email">{{ errors.email[0] }}</span>
+
                             </div>
                         </div>
                         <!-- Select Basic -->
-                        <div class="form-group">
+                        <div class="form-group" v-bind:class="{'has-error': errors.category_id}">
                             <label class="col-md-4 control-label" for="category_id">Select Category</label>
                             <div class="col-md-6">
                                 <select id="category_id" name="category_id" class="form-control" v-model="selectedGist.category_id">
                                     <option value="1">Option one</option>
                                     <option value="2">Option two</option>
                                 </select>
+                                <span class="help-block" v-show="errors.category_id">{{ errors.category_id[0] }}</span>
+
                             </div>
                         </div>
                     </fieldset>

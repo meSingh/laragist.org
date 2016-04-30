@@ -40,11 +40,6 @@ module.exports = {
                             that.readme = converter.makeHtml(response.data);                        })
 
                 })
-        },
-
-        toHtml: function(content){
-            alert("sdsd");
-            console.log(markdown.toHTML(content));
         }
 
     }
