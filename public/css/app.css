@@ -8432,7 +8432,7 @@ h5,
 h6 {
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
-  color: #333333;
+  color: #777;
   margin: 0px;
 }
 
@@ -8509,7 +8509,7 @@ p:last-child {
 }
 
 p a {
-  color: #333333;
+  color: #777;
 }
 
 .quote-text {
@@ -8543,6 +8543,22 @@ span.text-white a {
   padding: 15px 45px;
 }
 
+.categories {
+  text-align: center;
+}
+
+.categories li a {
+  margin: 0 5px 15px 0;
+  display: inline-block;
+  border-bottom: 2px solid #F6635B;
+  transition: all 0.3s ease;
+}
+
+.categories li a:hover {
+  color: #333;
+  border-color: #333;
+}
+
 .packages {
   padding: 50px 0;
 }
@@ -8556,7 +8572,7 @@ span.text-white a {
   background-color: #FFF;
   padding: 20px;
   min-height: 171px;
-  color: #333333;
+  color: #777;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   position: relative;
@@ -8675,6 +8691,75 @@ span.text-white a {
   padding: 0 20px 10px;
 }
 
+.package .readme {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.package .package-aside.versions-wrapper,
+.package .version-details {
+  margin-top: 20px;
+}
+
+.package .version-details .title {
+  border-top: 1px solid #f28d1a;
+  padding-top: 10px;
+}
+
+.package .versions {
+  list-style: none;
+  line-height: 170%;
+  overflow-y: hidden;
+  max-height: 300px;
+  padding: 0;
+  margin: 0;
+}
+
+.package .versions-expander {
+  text-align: center;
+  cursor: pointer;
+  margin: 10px 0 0;
+  line-height: 25px;
+}
+
+.package .versions .version {
+  padding: 2px 0 2px 5px;
+}
+
+.package .versions .version-number {
+  display: block;
+  float: left;
+  width: 91%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.package .details-toggler {
+  cursor: pointer;
+}
+
+.package .versions .version {
+  position: relative;
+  display: block;
+  height: 26px;
+}
+
+.package .delete-version {
+  display: inline-block;
+}
+
+.package .delete-version .submit {
+  position: absolute;
+  right: 5px;
+  top: 7px;
+}
+
+.package .delete-version .submit:hover {
+  color: #cd3729;
+}
+
 .top-bar {
   position: absolute;
   background: #fff;
@@ -8740,7 +8825,7 @@ span.text-white a {
 }
 
 .menu li a:hover {
-  color: #333333;
+  color: #777;
 }
 
 @media all and (max-width: 1050px) {
@@ -8814,7 +8899,7 @@ header .btn:last-child {
   content: '';
   opacity: 0.3;
   z-index: 2;
-  background-color: #333333;
+  background-color: #777;
 }
 
 .page-header .background-image-holder {
@@ -8834,7 +8919,7 @@ footer .footer-social-icons {
 }
 
 footer .footer-social-icons a {
-  color: #333;
+  color: #777;
 }
 
 footer .fa-heart {
@@ -8899,7 +8984,7 @@ footer.details .sub {
 }
 
 footer.details .sub a {
-  color: #333333;
+  color: #777;
   font-weight: 600;
 }
 
@@ -9065,7 +9150,7 @@ footer.short-2 .contact-action:hover {
 
 .feedback a {
   font-size: 15px;
-  color: #333333;
+  color: #777;
 }
 
 .double-bounce1 {
@@ -9109,7 +9194,7 @@ a {
 }
 
 .signup {
-  color: #333333;
+  color: #777;
 }
 
 .post-meta li {
@@ -9148,10 +9233,12 @@ nav li a {
   letter-spacing: 1px;
   color: #F6635B;
   font-weight: 600;
+  border-bottom: 1px solid #F6635B;
 }
 
 nav li a:hover {
   color: #e74c3c;
+  border-color: #e74c3c;
 }
 
 #searchInput {
