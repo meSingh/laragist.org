@@ -63,7 +63,7 @@ module.exports = {
                 else
                     item.clicked = 0;
             })
-            this.addtional = '&cslug='+category.slug;
+            this.addtional = '&cid='+category.id;
             this.fetchGists();
         },
 
