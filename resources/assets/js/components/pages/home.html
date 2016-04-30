@@ -85,16 +85,12 @@
     	            			<i class="fa fa-fw fa-heart"></i>&nbsp; 
     	            			<span>{{ gist.favorites }}</span>
     	            		</li>
-    	            		<!-- <li>
-    	            			<i class="fa fa-fw fa-code"></i>&nbsp; 
-    	            			<span>{{ gist.version }}</span>
-    	            		</li> -->
     	            	</ul>
     	            </div>
                     <div class="meta-info">
                         <p class="pull-right"><small>updated on: {{ gist.last_updated }}</small></p>
                         <ul class="list-inline">
-                            <li><i class="fa fa-fw fa-tags"></i></li>
+                            <li><i class="fa fa-fw fa-bars"></i></li>
                             <li v-for="cat in gist.categories">{{cat.name}}</li>
                         </ul>
                     </div>
