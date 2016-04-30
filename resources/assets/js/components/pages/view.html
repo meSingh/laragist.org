@@ -12,18 +12,75 @@
             </div>
         </div>
     </section>
-<div class="main-container ">
-    <section class="blog-masonry bg-muted first-child" style="padding-top: 50px;">
+    <section class="package" style="padding-top: 50px;">
         <div class="container">
+
             <div class="row">
-                <div class="col-sm-8">
-                    <h1> ReadMe</h1>
-                    <p class="lead">{{{ readme }}}</p>
+                <div class="col-md-8">
+
+                    <div class="version">
+                        
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="version-details col-md-9"><div class="title">
+    <span class="version-number">v0.8.0</span>
+
+    <span class="release-date">2014-12-08 02:24 UTC</span>
+</div>
+
+<div class="clearfix package-links">
+            <div class="row">
+                            <div class="clearfix visible-sm-block"></div>                <div class="clearfix visible-md-block visible-lg-block"></div>                <div class="requires col-sm-6 col-md-4 ">
+                    <p class="link-type">Requires</p>
+                                            <ul><li>php: &gt;=5.4.0</li><li><a href="/packages/illuminate/support">illuminate/support</a>: ~4.1</li><li><a href="/packages/league/fractal">league/fractal</a>: 0.10.*</li></ul>
+                                    </div>
+                                                            <div class="devRequires col-sm-6 col-md-4 ">
+                    <p class="link-type">Requires (Dev)</p>
+                                            <ul><li><a href="/packages/lucadegasperi/oauth2-server-laravel">lucadegasperi/oauth2-server-laravel</a>: 3.0.*</li><li><a href="/packages/tymon/jwt-auth">tymon/jwt-auth</a>: 0.3.*</li><li><a href="/packages/illuminate/routing">illuminate/routing</a>: 4.2.*</li><li><a href="/packages/illuminate/events">illuminate/events</a>: 4.2.*</li><li><a href="/packages/illuminate/auth">illuminate/auth</a>: 4.2.*</li><li><a href="/packages/illuminate/database">illuminate/database</a>: 4.2.*</li><li><a href="/packages/illuminate/pagination">illuminate/pagination</a>: 4.2.*</li><li><a href="/packages/illuminate/console">illuminate/console</a>: 4.2.*</li><li><a href="/packages/illuminate/filesystem">illuminate/filesystem</a>: 4.2.*</li><li><a href="/packages/phpunit/phpunit">phpunit/phpunit</a>: ~4.0</li><li><a href="/packages/mockery/mockery">mockery/mockery</a>: ~0.9</li><li><a href="/packages/squizlabs/php_codesniffer">squizlabs/php_codesniffer</a>: ~1.5</li></ul>
+                                    </div>
+                            <div class="clearfix visible-sm-block"></div>                                <div class="suggests col-sm-6 col-md-4 ">
+                    <p class="link-type">Suggests</p>
+                                            <ul><li><a href="/packages/lucadegasperi/oauth2-server-laravel">lucadegasperi/oauth2-server-laravel</a>: Use the League OAuth 2.0 server to protect your API.</li><li><a href="/packages/tymon/jwt-auth">tymon/jwt-auth</a>: Protect your API with JSON Web Tokens</li></ul>
+                                    </div>
+                                            <div class="clearfix visible-md-block visible-lg-block"></div>                <div class="provides col-sm-6 col-md-4 hidden-xs">
+                    <p class="link-type">Provides</p>
+                                            <p class="no-links">None</p>
+                                    </div>
+                            <div class="clearfix visible-sm-block"></div>                                <div class="conflicts col-sm-6 col-md-4 hidden-xs">
+                    <p class="link-type">Conflicts</p>
+                                            <p class="no-links">None</p>
+                                    </div>
+                                                            <div class="replaces col-sm-6 col-md-4 hidden-xs">
+                    <p class="link-type">Replaces</p>
+                                            <p class="no-links">None</p>
+                                    </div>
+                    </div>
+    </div>
+
+<div class="metadata">
+    <p class="license"><i class="glyphicon glyphicon-copyright-mark" title="License"></i> BSD-3-Clause <span class="source-reference"><i class="glyphicon glyphicon-bookmark" title="Source Reference"></i> afc1bddb8c36e88cc6e7d0fbe8767435316579f0</span></p>
+
+            <i class="glyphicon glyphicon-user" title="Authors"></i>
+        <ul class="authors">
+                            <li>Jason Lewis                        <span class="visible-sm-inline visible-md-inline visible-lg-inline">&lt;jason.lewis1991<span style="display:none">.woop</span>@gmail.com&gt;</span></li>
+                    </ul>
+    
+            <p class="tags">
+            <i class="glyphicon glyphicon-tag" title="Tags"></i>
+            <a href="https://packagist.org/search?tags=api">api</a><a href="https://packagist.org/search?tags=restful">restful</a><a href="https://packagist.org/search?tags=laravel">laravel</a><a href="https://packagist.org/search?tags=dingo">dingo</a></p>
+    </div>
+</div>
+
+
+
+            <div class="row">
+                <div class="col-sm-8 readme">
+                    {{{ readme }}}
                 </div>
                 <div class="col-sm-4">
-                    <div class="blog-masonry-item Tech">
-                        <div class="item-inner quote-post">
-                            <div class="post-title">
                                 <h1 style="margin-bottom: 20px;">lorem</h1>
                                 <a href="{{gist.repository}}"> <h4>{{gist.repository }}</h4> </a>
 
@@ -33,12 +90,12 @@
                                     </ul>
                                 </div>
                                 <a v-link="{ path: '/view', params : {id:1}}" class="link-text">More Info</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-</div>
+
+    <div class="clearfix"></div>
+    <br><br>
+
 <footer-component></footer-component>

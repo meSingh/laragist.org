@@ -17,6 +17,19 @@
 	<section class="packages">
 		<div class="container">
 
+
+            <div class="categories">
+                <ul class="list-inline"> 
+             
+                    <li><a href="@">Authentication</a></li>
+                    <li><a href="@">Authentication</a></li>
+                    <li><a href="@">Authentication</a></li>
+                    <li><a href="@">Authentication</a></li>
+                    <li><a href="@">Authentication</a></li>
+
+                </ul>
+            </div>
+
 			<div class="input-group input-group-lg">
 				<input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control" placeholder="Search the best laravel packages by entering 3 or more characters">
 			  	<div class="input-group-btn">
@@ -46,46 +59,49 @@
 			</div>
 
             <br><br>
+
+         
+
+            <br><br>
+
             <div class="row">
-		    <div class="package col-md-6" v-for="gist in gists">
-                <div class="wrapper">
-                    <div class="latest">
-                        <i class="fa fa-fw fa-code-fork"></i>&nbsp; 
-                        <span>{{ gist.version }}</span>
+    		    <div class="package col-md-6" v-for="gist in gists">
+                    <div class="wrapper">
+                        <div class="latest">
+                            <i class="fa fa-fw fa-code-fork"></i>&nbsp; 
+                            <span>{{ gist.version }}</span>
+                        </div>
+    	            <div class="info">
+    	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{gist.name}}</a></h3>
+    	                <p>{{gist.description}}</p>
+    	            </div>
+    	            <div class="meta">
+    	            	<ul class="list-unstyled">
+    	            		<li>
+    	            			<i class="fa fa-fw fa-download"></i>&nbsp; 
+    	            			<span>{{ gist.downloads_total }}</span>
+    	            		</li>
+    	            		<li>
+    	            			<i class="fa fa-fw fa-heart"></i>&nbsp; 
+    	            			<span>{{ gist.favorites }}</span>
+    	            		</li>
+    	            		<!-- <li>
+    	            			<i class="fa fa-fw fa-code"></i>&nbsp; 
+    	            			<span>{{ gist.version }}</span>
+    	            		</li> -->
+    	            	</ul>
+    	            </div>
+                    <div class="meta-info">
+                        <p class="pull-right"><small>updated on: {{ gist.last_updated }}</small></p>
+                        <ul class="list-inline">
+                            <li><i class="fa fa-fw fa-tags"></i></li>
+                            <li v-for="cat in gist.categories">{{cat.name}}</li>
+                        </ul>
                     </div>
-	            <div class="info">
-	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{gist.name}}</a></h3>
-	                <p>{{gist.description}}</p>
-	            </div>
-	            <div class="meta">
-	            	<ul class="list-unstyled">
-	            		<li>
-	            			<i class="fa fa-fw fa-download"></i>&nbsp; 
-	            			<span>{{ gist.downloads_total }}</span>
-	            		</li>
-	            		<li>
-	            			<i class="fa fa-fw fa-heart"></i>&nbsp; 
-	            			<span>{{ gist.favorites }}</span>
-	            		</li>
-	            		<!-- <li>
-	            			<i class="fa fa-fw fa-code"></i>&nbsp; 
-	            			<span>{{ gist.version }}</span>
-	            		</li> -->
-	            	</ul>
-	            </div>
-                <div class="meta-info">
-                    <p class="pull-right"><small>updated on: {{ gist.last_updated }}</small></p>
-                    <ul class="list-inline">
-                        <li><i class="fa fa-fw fa-tags"></i></li>
-                        <li v-for="cat in gist.categories">{{cat.name}}</li>
-                    </ul>
-                </div>
-                </div>
-		    </div>
+                    </div>
+    		    </div>
 
             </div>
-
-
 		</div>
 	</section>
 
