@@ -22,7 +22,8 @@ module.exports = {
                 first_name: "",
                 email: "",
                 category_id: ""
-            }
+            },
+            categories: []
     	};
     },
 
@@ -62,6 +63,10 @@ module.exports = {
                 category_id: ""
             }
             this.submitted = false
+        },
+
+        getCategories: function(){
+
         },
 
         submitPackage: function(){
