@@ -75,8 +75,8 @@
                             <span>{{ gist.version }}</span>
                         </div>
     	            <div class="info">
-    	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{gist.name}}</a></h3>
-    	                <p>{{gist.description}}</p>
+    	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{ gist.name.trunc(32) }}</a></h3>
+    	                <p>{{ gist.description.trunc(120) }}</p>
     	            </div>
     	            <div class="meta">
     	            	<ul class="list-unstyled">
