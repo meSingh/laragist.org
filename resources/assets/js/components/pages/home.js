@@ -63,10 +63,15 @@ module.exports = {
         },
 
         selectCategory: function(category){
+            var current = ''
             this.categories.forEach(function(item){
+                if(item.clicked == 1)
+                    current = item
+                
                 item.clicked = 0
             })
-            category.clicked= 1
+            if(current.id !== category.id)
+                category.clicked= 1
             console.log(this.categories);
             this.addtional = '&cid='+category.id;
             this.fetchGists();
