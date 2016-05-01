@@ -42,11 +42,17 @@ module.exports = {
         getCategories : function(){
             var that = this
             client({path: '/categories'}).then(function (response) {
-                that.categories = response.entity.data;
+
                 
-                that.categories.forEach(function(item){
-                    item.clicked = 0
-                });
+                response.entity.data.forEach(function(item){
+                    var temp = {
+                        name:item.name,
+                        clicked: 0,
+                        id: item.id
+                    };
+                    that.categories.push(temp);
+                })
+
 
                 console.log(that.categories);
 
@@ -57,12 +63,16 @@ module.exports = {
         },
 
         selectCategory: function(category){
+            var current = ''
             this.categories.forEach(function(item){
-                if(category.name == item.name)
-                    item.clicked =1;
-                else
-                    item.clicked = 0;
+                if(item.clicked == 1)
+                    current = item
+                
+                item.clicked = 0
             })
+            if(current.id !== category.id)
+                category.clicked= 1
+            console.log(this.categories);
             this.addtional = '&cid='+category.id;
             this.fetchGists();
         },
@@ -70,7 +80,6 @@ module.exports = {
         sort: function(type,current){
             this.sortby = "&sortby="+type;
             this.sortedAs = current;
-            console.log(this.sortedAs);
             this.fetchGists();
         },
 

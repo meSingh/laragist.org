@@ -24,7 +24,8 @@
                     <li v-for="category in categories" >
                         <a  v-bind:class="{'active': category.clicked }"
                             v-on:click="selectCategory(category)" >
-                                {{category.name}}
+                                {{category.name}} 
+                                <i class="fa fa-times" v-show="category.clicked"></i>
                         </a>
                     </li>
 
