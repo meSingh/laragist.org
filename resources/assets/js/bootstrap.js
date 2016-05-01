@@ -46,3 +46,9 @@ Vue.component('footer-component', require('./compiled/footer.vue'))
 const App = Vue.extend(require('./compiled/app.vue'))
 router.start(App, '#app')
 window.router = router
+
+
+String.prototype.trunc = String.prototype.trunc ||
+      function(n){
+          return (this.length > n) ? this.substr(0,n-1)+'...' : this;
+};
