@@ -8551,6 +8551,7 @@ span.text-white a {
   margin: 0 5px 15px 0;
   display: inline-block;
   border-bottom: 2px solid #F6635B;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -8559,7 +8560,7 @@ span.text-white a {
   border-color: #333;
 }
 
-.categories li a:active {
+.categories li a.active {
   color: #333;
   border-color: #333;
 }

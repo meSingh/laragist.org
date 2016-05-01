@@ -134,6 +134,7 @@ span.text-white a {
         margin: 0 5px 15px 0;
         display: inline-block;
         border-bottom: 2px solid #F6635B;
+        cursor: pointer;
         @include transition();
 
         &:hover {
@@ -141,7 +142,7 @@ span.text-white a {
             border-color: #333;
         }
 
-        &:active{
+        &.active{
           color: #333;
           border-color: #333;
         }
