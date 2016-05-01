@@ -22,6 +22,7 @@ module.exports = {
                 that.gist =  response.entity.data.package;
                 that.version_id = that.gist.version;
                 that.version = that.gist.latest;
+                that.version.require_dev = that.gist.latest['require-dev'];
                 that.getreadme();
             }, 
             function(errorResponse){
