@@ -163,7 +163,7 @@ span.text-white a {
             font-family: 'Roboto', sans-serif;
             background-color: #FFF; 
             padding: 20px; 
-            min-height: 171px;
+            min-height: 156px;
             color: #777; 
             box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
             border-radius: 4px;
@@ -218,7 +218,7 @@ span.text-white a {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                padding: 0 20px 5px;
+                padding: 0 20px 10px;
                 width: 100%;
 
                 ul { 
@@ -229,6 +229,10 @@ span.text-white a {
                         padding: 0 10px; 
                         background: RGBA(51,51,51,0.10); 
                         margin: 0 5px; 
+
+                        &:first-child {
+                            margin: 0;
+                        }
                     }
 
                     &:first-child {
@@ -279,13 +283,123 @@ span.text-white a {
     }
 }
 
-.package{
+.package {
 
+    .welcome {
+        padding: 30px 0;
 
-    .readme {
+        p { padding: 0; }
+
+        h2 {
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: bold;
+        }
+
+        .latest {
+            color: #FFF;
+            background: RGBA(51,51,51,0.10); 
+            padding: 5px 10px;
+            box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+            float: right;
+            padding: 10px;
+            position: relative;
+            @include transition();
+        }
+
+        .cats {
+            color: #FFF;
+
+            ul { 
+                margin-bottom: 0; 
+
+                li { 
+                    font-size: 11px; 
+                    padding: 0 10px; 
+                    background: RGBA(51,51,51,0.10); 
+                    margin: 0 5px; 
+
+                    &:first-child {
+                        margin: 0 1px 0 0;
+                    }
+                }
+
+                &:first-child {
+                    font-size: 13px !important;
+                }
+            }
+        }
+    }
+
+    .block {
         background-color: #FFF;
         padding: 20px;
-        border-radius: 4px;
+        border-radius: 2px;
+        margin-bottom: 20px;
+
+        .page-header {
+            margin-top: 0;
+        }
+    }
+
+    .install {
+        position: relative;
+        margin-bottom: 20px;
+
+        i {
+            position: absolute;
+            left: 15px;
+            top: 14px;
+            color: #f6635b;
+        }
+        code {
+            display: block;
+            padding: 8px 20px 8px 40px;
+            border: 1px solid #f6635b;
+            color: #f6635b;
+            background-color: #F9F0EF;
+        }
+    }
+
+    .description {
+
+        .tags {
+            color: #f6635b;
+
+            ul { 
+                margin-bottom: 0; 
+
+                li { 
+                    font-size: 11px; 
+                    padding: 0;  
+                    margin: 0 4px; 
+
+                    &:first-child {
+                        margin: 0 1px 0 0;
+                    }
+                }
+
+                &:first-child {
+                    font-size: 13px !important;
+                }
+            }
+        }
+    }
+
+    .details {
+        .authors {
+            margin-bottom: 0;
+
+            li img{
+                max-width: 100px;
+                border: 5px solid #F1F1F1;
+                margin: 10px -5px 0 0;
+            }
+        }
+    }
+
+    .readme {
+        
     }
 }
 
@@ -457,33 +571,6 @@ header .btn {
 }
 header .btn:last-child {
   margin-right: 0px;
-}
-.page-header {
-  margin: 0px;
-  padding: 0px;
-  padding: 160px 0px;
-  border-bottom: none;
-}
-.page-header h1 {
-  font-size: 40px;
-  margin-bottom: 24px;
-}
-.page-header p.lead {
-  font-size: 18px;
-}
-.page-header:before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  content: '';
-  opacity: 0.3;
-  z-index: 2;
-  background-color: #777;
-}
-.page-header .background-image-holder {
-  height: 150%;
-  top: -20%;
 }
 
 
@@ -802,7 +889,7 @@ width: 85% !important;
     letter-spacing: 1px;
     color: #F6635B;
     font-weight: 600;
-    border-bottom: 1px solid #F6635B;
+    // border-bottom: 1px solid #F6635B;    
 }
 
  nav li a:hover{
