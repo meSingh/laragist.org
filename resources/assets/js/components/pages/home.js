@@ -53,9 +53,6 @@ module.exports = {
                     that.categories.push(temp);
                 })
 
-
-                console.log(that.categories);
-
               }, function (response) {
                   // error callback
                });
@@ -70,9 +67,10 @@ module.exports = {
                 
                 item.clicked = 0
             })
+
             if(current.id !== category.id)
                 category.clicked= 1
-            console.log(this.categories);
+
             this.addtional = '&cid='+category.id;
             this.fetchGists();
         },
