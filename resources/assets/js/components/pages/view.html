@@ -176,7 +176,7 @@
 
                 <!--  THIRD ROW  -->
                 <div class="block">
-                    <div class="readme" v-bind:class="{'readme-limit': readmePulled!=1}">
+                    <div class="readme" v-bind:class="{'readme-limit': !readmePulled}">
                         {{{ readme }}}
                     </div>
                     <div class="pull-over" v-show="!readmePulled" v-on:click="readmePulled=1"><i class="fa fa-caret-down"></i></div>
