@@ -102,58 +102,58 @@
                             <hr>
 
                             <div class="row">
-                                <div class="col-md-4">
-                                    <h4>requires</h4>                                    <ul v-if="version.require">
+                                <div class="col-md-6">
+                                    <h4>requires</h4>                                    
+                                    <ul v-if="version.require">
                                         <li v-for="(package, number) in version.require">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6" v-if="version.require_dev">
                                     <h4>requires (dev)</h4>
-                                    <ul v-if="version.require_dev">
+                                    <ul>
                                         <li v-for="(package, number) in version.require_dev">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-4">
-                                    <h4>suggests</h4>
-                                    <ul v-if="version.suggest">
-                                        <li v-for="(package, number) in version.suggest">
-                                            <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
-                                        </li>
-                                    </ul>
-                                </div>
+                            </div>
 
+                            <div v-if="version.suggest">
+                                <h4>suggests</h4>
+                                <ul>
+                                    <li v-for="(package, number) in version.suggest">
+                                        <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
+                                    </li>
+                                </ul>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-4" v-if="version.provides">
                                     <h4>provides</h4>
-                                    <ul v-if="version.provides">
+                                    <ul>
                                         <li v-for="(package, number) in version.provides">
                                             {{ package }}: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4" v-if="version.conflicts">
                                     <h4>conflicts</h4>
-                                    <ul v-if="version.conflicts">
+                                    <ul>
                                         <li v-for="(package, number) in version.conflicts">
                                             {{ package }}: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4" v-if="version.replaces">
                                     <h4>replaces</h4>
-                                    <ul v-if="version.replaces">
+                                    <ul>
                                         <li v-for="(package, number) in version.replaces">
                                             {{ package }}: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-
                             </div>
                             
                         </div><!--  version block  -->
