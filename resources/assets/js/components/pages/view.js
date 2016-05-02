@@ -40,13 +40,16 @@ module.exports = {
             var that =this
             var url = document.createElement('a')
             url.href = this.gist.repository
-            console.log(this.gist.repository)
-            this.$http({url: 'https://raw.githubusercontent.com'+url.pathname+'/'+ this.version_id + '/readme.md'}).then(
+
+            if(url.hostname == 'github.com')
+                var host = "https://raw.githubusercontent.com";
+
+            this.$http({url: host+url.pathname+'/'+ this.version_id + '/readme.md'}).then(
                 function(response){
                     that.readme = converter.makeHtml(response.data);
                 },
                 function(errorResponse){
-                    this.$http({url: 'https://raw.githubusercontent.com'+url.pathname+'/' + this.version_id + '/README.md'}).then(
+                    this.$http({url: host+url.pathname+'/' + this.version_id + '/README.md'}).then(
                         function(response){
                             that.readme = converter.makeHtml(response.data);                        })
 
