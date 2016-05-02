@@ -4,11 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
-                <img src="/images/packagist.png" style="width: 70%;margin-left: 15%;">
+            	<i class="fa fa-life-ring" style="font-size: 150px; color:#fff"></i>
             </div>
             <div class="col-md-8">
                 <h2>Support <b></b> for our laravel packages.</h2>
-                <input type="email" id="searchInput" v-model="q" v-on:keyup="search()" class="form-control input-lg" placeholder="Enter email" style="margin-top: 30px;">
+                <form action="#" v-on:submit="sendEmail()">
+                	<input type="email" id="searchInput" v-model="subscriber.email" class="form-control input-lg" placeholder="Enter email" style="margin-top: 30px;">
+                </form>
             </div>
         </div>
     </div>

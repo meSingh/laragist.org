@@ -27,6 +27,10 @@ module.exports = {
     	};
     },
 
+    created: function(){
+        this.getCategories()
+    },
+
     methods: {
     	search: function(){
         this.notFound = false;
@@ -39,7 +43,7 @@ module.exports = {
       		this.$http({url: 'https://packagist.org/search.json?q='+this.q, method: 'GET'}).then(function (response) {
 
       			if(response.data.total >0)
-      				this.gists = response.data.results;
+                    this.gists = response.data.results;
                 else
                 {
                     this.notFound = true;
@@ -66,7 +70,12 @@ module.exports = {
         },
 
         getCategories: function(){
-
+            var that = this
+            client({path:'/categories'}).then(function(response){
+                response.entity.data.forEach(function(category){
+                    that.categories.push(category)
+                })
+            })
         },
 
         submitPackage: function(){
@@ -79,9 +88,8 @@ module.exports = {
             var that = this
             client({path: '/submit' ,entity:this.selectedGist}).then(
                 function(response){
-                    
                     that.submitted = true;
-                
+ 
                 },
                 function(response){
                     console.log(response)
