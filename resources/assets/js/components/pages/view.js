@@ -42,14 +42,19 @@ module.exports = {
             url.href = this.gist.repository
 
             if(url.hostname == 'github.com')
-                var host = "https://raw.githubusercontent.com";
+                var host = "https://raw.githubusercontent.com{repo}/";
+            else if(url.hostname == 'bitbucket')
+                var host = "https://bitbucket.org{repo}/raw/";
 
-            this.$http({url: host+url.pathname+'/'+ this.version_id + '/readme.md'}).then(
+            var pathname = url.pathname.replace('.git','')
+            host = host.replace('{repo}',pathname);
+
+            this.$http({url:  host+ this.version_id + '/readme.md'}).then(
                 function(response){
                     that.readme = converter.makeHtml(response.data);
                 },
                 function(errorResponse){
-                    this.$http({url: host+url.pathname+'/' + this.version_id + '/README.md'}).then(
+                    this.$http({url: host+ this.version_id + '/README.md'}).then(
                         function(response){
                             that.readme = converter.makeHtml(response.data);                        })
 
