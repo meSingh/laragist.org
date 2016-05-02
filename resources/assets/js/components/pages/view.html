@@ -161,13 +161,13 @@
                     </div>
 
                     <div class="col-md-3">
-                        <div class="block version-selector">
+                        <div class="block" v-bind:class="{'version-selector' : versionsListPulled!=1}">
                             <ul>
                                 <li v-for="version in gist.versions">
                                     <a href="#">{{version.version}}</a>
                                 </li>
                             </ul>
-                            <div class="pull-over"><i class="fa fa-caret-down"></i></div>
+                            <div class="pull-over" v-show="!versionsListPulled" v-on:click="versionsListPulled=1"><i class="fa fa-caret-down"></i></div>
                         </div>
                         
                     </div>
@@ -176,10 +176,10 @@
 
                 <!--  THIRD ROW  -->
                 <div class="block">
-                    <div class="readme">
+                    <div class="readme" v-bind:class="{'readme-limit': readmePulled!=1}">
                         {{{ readme }}}
                     </div>
-                    <div class="pull-over"><i class="fa fa-caret-down"></i></div>
+                    <div class="pull-over" v-show="!readmePulled" v-on:click="readmePulled=1"><i class="fa fa-caret-down"></i></div>
                 </div>
                 <!--  THIRD ROW  -->
             </div>

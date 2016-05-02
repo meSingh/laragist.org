@@ -6,7 +6,9 @@ module.exports = {
             name: this.$route.params.name,
             readme: '',
             version_id: '',
-            version: []
+            version: [],
+            versionsListPulled: 0,
+            readmePulled: 0
     }
   },
 
