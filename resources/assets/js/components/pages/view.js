@@ -43,7 +43,7 @@ module.exports = {
 
             if(url.hostname == 'github.com')
                 var host = "https://raw.githubusercontent.com{repo}/";
-            else if(url.hostname == 'bitbucket')
+            else if(url.hostname == 'bitbucket.org')
                 var host = "https://bitbucket.org{repo}/raw/";
 
             var pathname = url.pathname.replace('.git','')
