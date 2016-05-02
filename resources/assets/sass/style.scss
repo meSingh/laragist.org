@@ -490,8 +490,10 @@ span.text-white a {
     }
 
     .readme {
-        max-height: 800px;
         overflow: hidden;
+    }
+    .readme-limit{
+        max-height: 800px;
     }
 }
 

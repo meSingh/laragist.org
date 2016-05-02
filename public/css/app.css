@@ -8909,8 +8909,11 @@ span.text-white a {
 }
 
 .package .readme {
-  max-height: 800px;
   overflow: hidden;
+}
+
+.package .readme-limit {
+  max-height: 800px;
 }
 
 .package .package-aside.versions-wrapper,
