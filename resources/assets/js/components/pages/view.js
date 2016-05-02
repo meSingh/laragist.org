@@ -36,14 +36,17 @@ module.exports = {
 
         },
 
-        getreadme: function(){
+        getreadme: function(version){
             var that =this
-            this.$http({url: 'https://raw.githubusercontent.com/'+this.user+'/'+this.name+'/' + this.version_id + '/readme.md'}).then(
+            var url = document.createElement('a')
+            url.href = this.gist.repository
+            console.log(this.gist.repository)
+            this.$http({url: 'https://raw.githubusercontent.com'+url.pathname+'/'+ this.version_id + '/readme.md'}).then(
                 function(response){
                     that.readme = converter.makeHtml(response.data);
                 },
                 function(errorResponse){
-                    this.$http({url: 'https://raw.githubusercontent.com/'+this.user+'/'+this.name+'/' + this.version_id + '/README.md'}).then(
+                    this.$http({url: 'https://raw.githubusercontent.com'+url.pathname+'/' + this.version_id + '/README.md'}).then(
                         function(response){
                             that.readme = converter.makeHtml(response.data);                        })
 
