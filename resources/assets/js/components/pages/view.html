@@ -13,7 +13,7 @@
                     </small>
                 </h2>
                 <div class="cats">
-                    <ul class="list-inline pull-right">
+                    <ul class="list-inline pull-right" v-if="gist.licenses[0]">
                         <li><i class="fa fa-fw fa-copyright"></i></li>
                         <li v-for="license in gist.licenses">{{license}}</li>
                     </ul>
@@ -36,13 +36,13 @@
                             <code>composer require {{ gist.name }}</code>
                         </div>
 
-                        <div class="description block">
+                        <div class="description block" v-if="gist.description">
                             <!-- <div class="page-header">
                                 <h3>Description</h3>
                             </div> -->
                             <p>{{gist.description}}</p>
 
-                            <ul class="list-inline tags">
+                            <ul class="list-inline tags" v-if="gist.keywords[0]">
                                 <li><i class="fa fa-fw fa-tags"></i></li>
                                 <li v-for="keyword in gist.keywords">#{{keyword}}</li>
                             </ul>
@@ -102,9 +102,9 @@
                             <hr>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6" v-if="version.require">
                                     <h4>requires</h4>                                    
-                                    <ul v-if="version.require">
+                                    <ul>
                                         <li v-for="(package, number) in version.require">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
                                         </li>
