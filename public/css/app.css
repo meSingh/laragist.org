@@ -8410,7 +8410,7 @@ html {
 
 body {
   /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-family: "Roboto Slab", serif;
+  font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #777777;
   background-color: #F8F8F8 !important;
@@ -8548,6 +8548,7 @@ span.text-white a {
   display: inline-block;
   border-bottom: 2px solid #F6635B;
   cursor: pointer;
+  font-size: 15px;
   transition: all 0.3s ease;
 }
 
@@ -8561,8 +8562,48 @@ span.text-white a {
   border-color: #333;
 }
 
+.search input {
+  border: none;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+.search .input-group-btn:focus {
+  outline: none;
+}
+
+.search .btn {
+  border: none;
+  color: #333;
+  min-width: 200px;
+  text-align: right;
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+.search .btn:hover {
+  background-color: #FFF;
+}
+
+.search .btn span {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+.search .btn:focus {
+  background-color: #FFF;
+  border: none;
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
+  color: #333;
+  outline: none;
+}
+
+.search .dropdown-menu {
+  border: none;
+  margin-top: 0;
+  min-width: 200px;
+}
+
 .packages {
-  padding: 50px 0;
+  padding: 30px 0 20px;
 }
 
 .packages .package {
@@ -8575,7 +8616,7 @@ span.text-white a {
   padding: 20px;
   min-height: 156px;
   color: #777;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   position: relative;
   transition: all 0.3s ease;
@@ -8711,6 +8752,10 @@ span.text-white a {
   font-weight: bold;
 }
 
+.package .welcome h2 small {
+  font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif;
+}
+
 .package .welcome .latest {
   color: #FFF;
   background: RGBA(51, 51, 51, 0.1);
@@ -8745,44 +8790,48 @@ span.text-white a {
   font-size: 13px !important;
 }
 
-.package .block {
+.package .content {
+  padding-top: 30px;
+}
+
+.package .content .block {
   background-color: #FFF;
   padding: 20px;
   border-radius: 2px;
   margin-bottom: 20px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-.package .block .page-header {
+.package .content .block .page-header {
   margin-top: 0;
 }
 
-.package .pull-over {
+.package .content .pull-over {
   text-align: center;
   border-top: 1px dotted;
   border-bottom: 1px dotted;
   margin: 5px 0;
 }
 
-.package .pull-over:hover {
+.package .content .pull-over:hover {
   background: #F6635B;
   color: #fff;
   border-color: #FFF;
 }
 
-.package .install {
+.package .content .install {
   position: relative;
   margin-bottom: 20px;
 }
 
-.package .install i {
+.package .content .install i {
   position: absolute;
   left: 15px;
   top: 14px;
   color: #f6635b;
 }
 
-.package .install code {
+.package .content .install code {
   display: block;
   padding: 8px 20px 8px 40px;
   border: 1px solid #f6635b;
@@ -8790,129 +8839,100 @@ span.text-white a {
   background-color: #F9F0EF;
 }
 
-.package .description .tags {
+.package .content .description .tags {
   color: #f6635b;
 }
 
-.package .description .tags ul {
+.package .content .description .tags ul {
   margin-bottom: 0;
 }
 
-.package .description .tags ul li {
+.package .content .description .tags ul li {
   font-size: 11px;
   padding: 0;
   margin: 0 4px;
 }
 
-.package .description .tags ul li:first-child {
+.package .content .description .tags ul li:first-child {
   margin: 0 1px 0 0;
 }
 
-.package .description .tags ul:first-child {
+.package .content .description .tags ul:first-child {
   font-size: 13px !important;
 }
 
-.package .stats {
-  margin: 30px;
-}
-
-.package .stats h3 {
-  text-align: center;
-  color: #2C3E50;
-  font-family: "Roboto", serif;
-}
-
-.package .stats h3 i {
-  margin: 0 10px;
-}
-
-.package .details .authors {
+.package .content .details .authors {
   margin-bottom: 0;
   text-align: center;
 }
 
-.package .details .authors li img {
+.package .content .details .authors li img {
   max-width: 100px;
   border: 5px solid #F1F1F1;
   margin: 0 -5px 10px 0;
 }
 
-.package .details .btns .btn {
+.package .content .details .stats {
+  margin-bottom: 10px;
+}
+
+.package .content .details .stats h3 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #2C3E50;
+  font-family: "Roboto", serif;
+}
+
+.package .content .details .stats h3 i {
+  margin: 0 10px;
+}
+
+.package .content .details .btns .btn {
   color: #FFF;
 }
 
-.package .details .btns .btn:hover {
+.package .content .details .btns .btn:hover {
   color: #FFF;
 }
 
-.package .details .btns .repository {
+.package .content .details .btns .repository {
   background-color: #2C3E50;
 }
 
-.package .details .btns .repository:hover {
+.package .content .details .btns .repository:hover {
   background-color: #2A4867;
 }
 
-.package .details .btns .homepage {
+.package .content .details .btns .homepage {
   background-color: #FC930A;
 }
 
-.package .details .btns .homepage:hover {
+.package .content .details .btns .homepage:hover {
   background-color: #FFA024;
 }
 
-.package .version hr {
+.package .content .version hr {
   border-color: #F6635B;
 }
 
-.package .version h4 {
+.package .content .version h4 {
   font-weight: bold;
   font-size: 16px;
 }
 
-.package .version ul {
+.package .content .version ul {
   padding: 20px 0 20px 20px;
 }
 
-.package .version ul li {
+.package .content .version ul li {
   list-style: disc;
 }
 
-.package .version-selector {
-  max-height: 360px;
-  padding: 20px 0;
-}
-
-.package .version-selector ul {
-  max-height: 290px;
+.package .content .readme {
   overflow: hidden;
 }
 
-.package .version-selector ul li {
-  padding: 0 20px;
-}
-
-.package .version-selector ul li a {
-  padding: 5px 0;
-}
-
-.package .version-selector ul li a:hover {
-  text-decoration: underline;
-}
-
-.package .version-selector ul li.active {
-  background-color: #f6635b;
-}
-
-.package .version-selector ul li.active a {
-  color: #FFF;
-}
-
-.package .readme {
-  overflow: hidden;
-}
-
-.package .readme-limit {
+.package .content .readme-limit {
   max-height: 800px;
 }
 
@@ -9096,8 +9116,9 @@ header .btn:last-child {
 
 footer {
   background-color: #FFF;
+  margin-top: 10px;
   padding-bottom: 20px;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 footer .footer-social-icons {
