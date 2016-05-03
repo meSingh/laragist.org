@@ -13,7 +13,7 @@
                     </small>
                 </h2>
                 <div class="cats">
-                    <ul class="list-inline pull-right" v-if="gist.licenses[0]">
+                    <ul class="list-inline pull-right" v-show="gist.licenses[0]">
                         <li><i class="fa fa-fw fa-copyright"></i></li>
                         <li v-for="license in gist.licenses">{{license}}</li>
                     </ul>
@@ -25,7 +25,7 @@
             </div>
         </section>
 
-        <section style="padding-top: 30px;">
+        <section class="content">
             <div class="container">
 
                 <div class="row"> <!--  TOP ROW  -->
@@ -36,34 +36,28 @@
                             <code>composer require {{ gist.name }}</code>
                         </div>
 
-                        <div class="description block" v-if="gist.description">
+                        <div class="description block" v-show="gist.description">
                             <!-- <div class="page-header">
                                 <h3>Description</h3>
                             </div> -->
                             <p>{{gist.description}}</p>
 
-                            <ul class="list-inline tags" v-if="gist.keywords[0]">
+                            <ul class="list-inline tags" v-show="gist.keywords[0]">
                                 <li><i class="fa fa-fw fa-tags"></i></li>
                                 <li v-for="keyword in gist.keywords">#{{keyword}}</li>
                             </ul>
                         </div>
 
-                        <div class="stats">
-                            <div class="row">
-                                <div class="col-md-4 col-md-offset-2">
-                                    <h3>
-                                        <i class="fa fa-download"></i>
-                                        {{ gist.downloads_total}}
-                                    </h3>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3>
-                                        <i class="fa fa-heart"></i>
-                                        {{ gist.favorites }}
-                                    </h3>
-                                </div>
+
+
+                         <!--  THIRD ROW  -->
+                        <div class="block">
+                            <div class="readme" v-bind:class="{'readme-limit': !readmePulled}">
+                                {{{ readme }}}
                             </div>
+                            <div class="pull-over" v-show="!readmePulled" v-on:click="readmePulled=1"><i class="fa fa-caret-down"></i></div>
                         </div>
+                        <!--  THIRD ROW  -->
 
                     </div>
                     <div class="col-md-3 details">
@@ -73,6 +67,17 @@
                                     <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=100" alt="{{ author.name }}" title="{{ author.name }}">
                                 </li>
                             </ul>
+
+                            <div class="stats">
+                                <h3>
+                                    <i class="fa fa-download"></i>
+                                    {{ gist.downloads_total}}
+                                </h3>
+                                <h3>
+                                    <i class="fa fa-heart"></i>
+                                    {{ gist.favorites }}
+                                </h3>
+                            </div>
 
                             <div class="btns">
                                 <a href="{{ gist.repository }}" target="_blank" class="btn btn-block repository">
@@ -84,28 +89,8 @@
                             </div>
                             
                         </div>
-                        
-                    </div>
-                </div> <!--  TOP ROW  -->
 
-
-                <div class="row"> <!--  SECOND ROW  -->
-                    <div class="col-md-9">
-
-                         <!--  THIRD ROW  -->
-                        <div class="block">
-                            <div class="readme" v-bind:class="{'readme-limit': !readmePulled}">
-                                {{{ readme }}}
-                            </div>
-                            <div class="pull-over" v-show="!readmePulled" v-on:click="readmePulled=1"><i class="fa fa-caret-down"></i></div>
-                        </div>
-                        <!--  THIRD ROW  -->
-
-                        
-
-                    </div>
-
-                    <div class="col-md-3">
+              
                         <!-- <div class="block" v-bind:class="{'version-selector' : versionsListPulled!=1}">
                             <ul>
                                 <li v-for="version in gist.versions">
@@ -114,6 +99,8 @@
                             </ul>
                             <div class="pull-over" v-show="!versionsListPulled" v-on:click="versionsListPulled=1"><i class="fa fa-caret-down"></i></div>
                         </div> -->
+
+                        
 
                         <div class="version block">
                             <select>
@@ -124,7 +111,7 @@
                             
                             <hr>
 
-                            <div v-if="version.require">
+                            <div v-show="version.require">
                                 <h4>requires</h4>                                    
                                 <ul>
                                     <li v-for="(package, number) in version.require">
@@ -132,7 +119,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if="version.require_dev">
+                            <div v-show="version.require_dev">
                                 <h4>requires (dev)</h4>
                                 <ul>
                                     <li v-for="(package, number) in version.require_dev">
@@ -140,7 +127,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if="version.suggest">
+                            <div v-show="version.suggest">
                                 <h4>suggests</h4>
                                 <ul>
                                     <li v-for="(package, number) in version.suggest">
@@ -148,7 +135,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if="version.provides">
+                            <div v-show="version.provides">
                                 <h4>provides</h4>
                                 <ul>
                                     <li v-for="(package, number) in version.provides">
@@ -156,7 +143,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if="version.conflicts">
+                            <div v-show="version.conflicts">
                                 <h4>conflicts</h4>
                                 <ul>
                                     <li v-for="(package, number) in version.conflicts">
@@ -164,7 +151,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div v-if="version.replaces">
+                            <div v-show="version.replaces">
                                 <h4>replaces</h4>
                                 <ul>
                                     <li v-for="(package, number) in version.replaces">
@@ -181,9 +168,6 @@
                
             </div>
         </section>
-
-    <div class="clearfix"></div>
-    <br><br>
 
     </div>
 

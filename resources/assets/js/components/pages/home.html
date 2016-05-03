@@ -1,22 +1,20 @@
     <nav-component></nav-component>
 
-
-		<section class="welcome">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 col-md-offset-1">
-						<img src="/images/laravel.png" style="width: 100%;">
-					</div>
-					<div class="col-md-8">
-						<h2><b>Laragist</b> is a <b>community-supported catalog</b> of laravel packages and libraries curated by <b>Khurafati Gang</b></h2>
-					</div>
+	<section class="welcome">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-md-offset-1">
+					<img src="/images/laravel.png" style="width: 100%;">
+				</div>
+				<div class="col-md-8">
+					<h2><b>Laragist</b> is a <b>community-supported catalog</b> of laravel packages and libraries curated by <b>Khurafati Gang</b></h2>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
 	<section class="packages">
 		<div class="container">
-
 
             <div class="categories">
                 <ul class="list-inline"  > 
@@ -32,7 +30,7 @@
                 </ul>
             </div>
 
-			<div class="input-group input-group-lg">
+			<div class="input-group input-group-lg search">
 				<input type="text" id="searchInput" v-model="q" v-on:keyup="fetchGists()" class="form-control" placeholder="Search the best laravel packages by entering 3 or more characters">
 			  	<div class="input-group-btn">
 
@@ -61,7 +59,7 @@
 			  	</div>
 			</div>
 
-            <br><br>
+            <br>
 
             <div class="row">
     		    <div class="package col-md-6" v-for="gist in gists">
@@ -100,7 +98,4 @@
 		</div>
 	</section>
 
-
-
-
-<footer-component></footer-component>
+    <footer-component></footer-component>

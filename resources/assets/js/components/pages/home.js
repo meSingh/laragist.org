@@ -10,8 +10,8 @@ module.exports = {
             q:          "",
             categories: [],
             addtional: "",
-            sortedAs: "Most Popular",
-            sortby: "&sortby=mp"
+            sortedAs: "Most Downloaded",
+            sortby: "&sortby=md"
     	};
     },
 
