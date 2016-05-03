@@ -71,7 +71,11 @@ module.exports = {
             if(current.id !== category.id)
                 category.clicked= 1
 
-            this.addtional = '&cid='+category.id;
+            if(category.clicked == 1)
+              this.addtional = '&cid='+category.id;
+            else
+              this.addtional = '';
+
             this.fetchGists();
         },
 
