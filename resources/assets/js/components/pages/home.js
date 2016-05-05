@@ -7,17 +7,27 @@ module.exports = {
     data: function(){
     	return {
     		gists:      [],
+            
             q:          "",
             categories: [],
+            
             addtional: "",
             sortedAs: "Most Downloaded",
-            sortby: "&sortby=md"
+            sortby: "&sortby=md",
+            
+            pagination: {
+                total: 120, 
+                per_page: 12,
+                current_page: 1,
+                total_pages: 10
+            }
+
     	};
     },
 
     created: function(){
-      this.fetchGists()
-      this.getCategories()
+        this.fetchGists()
+        this.getCategories()
     },
 
     methods: {
@@ -28,10 +38,17 @@ module.exports = {
 
             var that = this
     		// GET request
-      		client({path: '/?q='+this.q+this.addtional+this.sortby}).then(function (response) {
+      		client({path: '/?q='+this.q+this.addtional+this.sortby+'&page='+this.pagination.current_page}).then(function (response) {
             console.log(response)
       			if(response.entity.meta.pagination.total >0)
       				that.gists = response.entity.data;
+            
+                that.pagination = {
+                    total: response.entity.meta.pagination.total, 
+                    per_page: response.entity.meta.pagination.per_page,
+                    current_page: response.entity.meta.pagination.current_page,
+                    total_pages: response.entity.meta.pagination.total_pages
+                }
 
       		}, function (response) {
           		// error callback
@@ -85,14 +102,13 @@ module.exports = {
             this.fetchGists();
         },
 
+        author: function(name){
+            return name.split('/')[0];
+        },
 
-      author: function(name){
-        return name.split('/')[0];
-      },
-
-      package: function(name){
-        return name.split('/')[1];
-      }
+        package: function(name){
+            return name.split('/')[1];
+        }
     }
 
 }
