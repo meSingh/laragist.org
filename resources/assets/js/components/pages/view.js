@@ -8,7 +8,8 @@ module.exports = {
             version_id: '',
             version: [],
             versionsListPulled: 0,
-            readmePulled: 0
+            readmePulled: 0,
+            versionPulled: 0
         }
     },
 

@@ -8863,13 +8863,39 @@ span.text-white a {
 
 .package .content .details .authors {
   margin-bottom: 0;
-  text-align: center;
 }
 
 .package .content .details .authors li img {
   max-width: 100px;
   border: 5px solid #F1F1F1;
-  margin: 0 -5px 10px 0;
+  margin: 0 -5px 5px 0;
+}
+
+.package .content .details .authors li h4 {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.package .content .details .authors-alt {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.package .content .details .authors-alt li img {
+  max-width: 120px;
+  border: 5px solid #F1F1F1;
+  margin: 0 -5px 5px 0;
+}
+
+.package .content .details .authors-alt li h4 {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.package .content .details hr {
+  margin: 10px 0;
 }
 
 .package .content .details .stats {
@@ -8887,8 +8913,37 @@ span.text-white a {
   margin: 0 10px;
 }
 
+.package .content .details .stats-alt {
+  margin-bottom: 10px;
+  margin-left: -15px;
+}
+
+.package .content .details .stats-alt .box {
+  background: #F8F8F8;
+  margin: 10px 0;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.package .content .details .stats-alt .box i {
+  display: inline-block;
+  padding: 12px;
+  font-size: 15px;
+  border-right: 1px solid #E2E2E2;
+}
+
+.package .content .details .stats-alt .box h3 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #2C3E50;
+  font-family: "Roboto", serif;
+  display: inline-block;
+  padding: 10px;
+}
+
 .package .content .details .btns .btn {
   color: #FFF;
+  border: none;
 }
 
 .package .content .details .btns .btn:hover {
@@ -8911,21 +8966,25 @@ span.text-white a {
   background-color: #FFA024;
 }
 
-.package .content .version hr {
-  border-color: #F6635B;
-}
-
 .package .content .version h4 {
   font-weight: bold;
   font-size: 16px;
 }
 
 .package .content .version ul {
-  padding: 20px 0 20px 20px;
+  padding: 10px 0 10px 20px;
 }
 
 .package .content .version ul li {
   list-style: disc;
+}
+
+.package .content .version > div {
+  overflow: hidden;
+}
+
+.package .content .version .version-limit {
+  max-height: 678px;
 }
 
 .package .content .readme {
@@ -8934,6 +8993,32 @@ span.text-white a {
 
 .package .content .readme-limit {
   max-height: 800px;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #F6635B;
+  font-size: 16px;
+  border-color: #EFEFEF;
+}
+
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+  color: #F6635B;
+  background-color: #FFF;
+  border-color: #F6635B;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  background-color: #F6635B;
+  border-color: #F6635B;
 }
 
 .package .package-aside.versions-wrapper,
@@ -9280,31 +9365,6 @@ footer.short-2 .contact-action:hover {
   margin-bottom: 16px;
 }
 
-.pagination li a {
-  color: #F6635B;
-  background: none;
-  margin-left: 12px;
-  border-radius: 50%;
-  padding: 5px 12px;
-}
-
-.pagination li.active {
-  background: #F6635B;
-}
-
-.pagination li:first-child a,
-.pagination li:last-child a {
-  border-radius: 50% !important;
-}
-
-.pagination-lg li a {
-  padding: 7px 16px;
-}
-
-.pagination-sm li a {
-  padding: 5px 11px;
-}
-
 .pager li a {
   background: none;
   transition: all .3s ease;
@@ -9427,14 +9487,14 @@ a {
   }
 }
 
-nav li {
+.top-bar nav li {
   display: inline-block;
   padding: 20px 12px 16px;
   margin-top: 5px;
   color: #F6635B;
 }
 
-nav li a {
+.top-bar nav li a {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   text-transform: uppercase;
@@ -9443,7 +9503,7 @@ nav li a {
   font-weight: 600;
 }
 
-nav li a:hover {
+.top-bar nav li a:hover {
   color: #e74c3c;
   border-color: #e74c3c;
 }
