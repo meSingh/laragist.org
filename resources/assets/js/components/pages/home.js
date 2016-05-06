@@ -59,7 +59,6 @@ module.exports = {
         getCategories : function(){
             var that = this
             client({path: '/categories'}).then(function (response) {
-
                 
                 response.entity.data.forEach(function(item){
                     var temp = {
@@ -77,6 +76,9 @@ module.exports = {
         },
 
         selectCategory: function(category){
+            
+            this.pagination.current_page = 1;
+
             var current = ''
             this.categories.forEach(function(item){
                 if(item.clicked == 1)
@@ -97,6 +99,7 @@ module.exports = {
         },
 
         sort: function(type,current){
+            this.pagination.current_page = 1;
             this.sortby = "&sortby="+type;
             this.sortedAs = current;
             this.fetchGists();

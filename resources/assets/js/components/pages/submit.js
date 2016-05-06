@@ -23,22 +23,29 @@ module.exports = {
                 email: "",
                 category_id: ""
             },
-            categories: []
+            categories: [],
+            gistsUnderReview : []
     	};
     },
 
     created: function(){
         this.getCategories()
+        this.getUnderReviews()
     },
 
     methods: {
     	search: function(){
         this.notFound = false;
 
-    		if(this.q.length < 3)
-    			return;
+    		if(this.q.length < 1)
+    		{ 
+                this.getUnderReviews()
+                return;
+            }
+
     		// GET request
-        
+            
+            this.gistsUnderReview = [];
           
       		this.$http({url: 'https://packagist.org/search.json?q='+this.q, method: 'GET'}).then(function (response) {
 
@@ -107,6 +114,14 @@ module.exports = {
                     }
 
             )
+        },
+
+        getUnderReviews: function(){
+            var that =this
+            this.gists = [];
+            client({path: '/under-review'}).then(function(response){
+                that.gistsUnderReview = response.entity.data
+            })
         }
 
     }

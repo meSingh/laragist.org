@@ -36,6 +36,40 @@
         </div>
         <div class="container">
             <div class="row">
+
+                <!-- Under review packages -->
+                <div class="package col-md-6" v-for="gist in gistsUnderReview">
+                    <div class="wrapper submit-wrapper">
+                        <div class="info">
+                            <h3><a title="{{gist.name}}">
+                                        {{gist.name.trunc(32)}}
+                                </a>
+                            </h3>
+                            <p>{{gist.description.trunc(120)}}</p>
+                        </div>
+                        <div class="meta">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <i class="fa fa-fw fa-download"></i>&nbsp;
+                                    <span>{{ gist.downloads_total }}</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-fw fa-heart"></i>&nbsp;
+                                    <span>{{ gist.favorites }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="submit pull-right">
+                            <a href="#" data-toggle="modal" v-on:click="selectGist(gist)" data-target="#submitModal"> Submitted by:  </a>
+                        </div> -->
+                        <div class="meta-info">
+                            <p class="pull-right"><small>submitted by: {{gist.user}}</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ./ Under review packages -->
+
                 <div class="package col-md-6" v-for="gist in gists">
                     <div class="wrapper submit-wrapper">
                         <div class="info">
