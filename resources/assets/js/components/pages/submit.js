@@ -23,12 +23,14 @@ module.exports = {
                 email: "",
                 category_id: ""
             },
-            categories: []
+            categories: [],
+            gistsUnderReview : []
     	};
     },
 
     created: function(){
         this.getCategories()
+        this.getUnderReviews()
     },
 
     methods: {
@@ -107,6 +109,13 @@ module.exports = {
                     }
 
             )
+        },
+
+        getUnderReviews: function(){
+            var that =this
+            client({path: '/under-review'}).then(function(response){
+                that.gistsUnderReview = response.entity.data
+            })
         }
 
     }
