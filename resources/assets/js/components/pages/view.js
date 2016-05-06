@@ -10,8 +10,8 @@ module.exports = {
             versionsListPulled: 0,
             readmePulled: 0,
             versionPulled: 0
-    }
-  },
+        }
+    },
 
     created: function(){
         this.fetchGist();
@@ -21,6 +21,7 @@ module.exports = {
     methods: {
     	fetchGist: function(){
             var that = this
+
             client({path: '/packages/'+this.user+'/'+this.name}).then(function(response){
                 that.gist =  response.entity.data.package;
                 that.version_id = that.gist.version;
@@ -39,6 +40,8 @@ module.exports = {
 
         getreadme: function(version){
             var that =this
+
+            //Creating dummy a element to parse repository url
             var url = document.createElement('a')
             url.href = this.gist.repository
 
