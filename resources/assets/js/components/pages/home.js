@@ -77,6 +77,9 @@ module.exports = {
         },
 
         selectCategory: function(category){
+            
+            this.pagination.cuurent_page = 1;
+
             var current = ''
             this.categories.forEach(function(item){
                 if(item.clicked == 1)
@@ -97,6 +100,7 @@ module.exports = {
         },
 
         sort: function(type,current){
+            this.pagination.current_page = 0;
             this.sortby = "&sortby="+type;
             this.sortedAs = current;
             this.fetchGists();
