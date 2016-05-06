@@ -16,7 +16,9 @@ $color-yellow:  #FC930A;
 }
 
 @mixin shadow( $spread: 2px ) {
-    box-shadow: 0 0 $spread rgba(0,0,0,0.1);
+    // box-shadow: 0 0 $spread rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
+    // border: 1px solid rgb(225, 225, 225);
 }
 
 html {
@@ -121,6 +123,7 @@ span.text-white a {
 
 
 .welcome { background-color: #F6635B; padding: 50px 0;
+    @include shadow();
     /*background-color: #2c3e50 !important;*/
     /*background-color: #F6635B !important;*/
 }
@@ -162,7 +165,8 @@ span.text-white a {
 .search {
     input {
         border: none;
-        box-shadow: 0px 0px 1px rgba(0,0,0,0.1);
+        @include shadow();
+        // box-shadow: 0px 0px 1px rgba(0,0,0,0.1);
     }
     .input-group-btn:focus {
         outline: none;
@@ -172,7 +176,7 @@ span.text-white a {
         color: #333;
         min-width: 200px;
         text-align: right;
-        box-shadow: 1px 0px 1px rgba(0,0,0,0.1);
+        @include shadow();
         
         &:hover { background-color: #FFF; }
         span { 
@@ -183,7 +187,7 @@ span.text-white a {
         &:focus {
             background-color: #FFF;
             border: none;
-            box-shadow: 1px 0px 1px rgba(0,0,0,0.1);
+            @include shadow();
             color: #333;
             outline: none;
         }
@@ -336,6 +340,7 @@ span.text-white a {
 
     .welcome {
         padding: 30px 0;
+        @include shadow();
 
         p { padding: 0; }
 
@@ -585,6 +590,8 @@ span.text-white a {
 
 .pagination {
 
+    @include shadow();
+
     > li {
         > a, > span {
             color: $color-primary;
@@ -616,6 +623,63 @@ span.text-white a {
         }
     }
 }
+
+.about {
+
+
+    .welcome {
+        padding: 30px 0;
+        @include shadow();
+
+        h2 {
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: bold;
+        }
+    }
+
+    .content {
+        padding-top: 30px;
+
+        .block {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            @include shadow();
+
+            .page-header {
+                margin-top: 0;
+            }
+        }
+
+        .makers {
+
+            h3 {
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+
+            .maker {
+                padding: 20px 30px;
+                @include shadow();
+                
+                .avatar {
+                    border: 5px solid #F1F1F1;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    font-size: 22px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+
 
 
 .package .package-aside.versions-wrapper, .package .version-details {
