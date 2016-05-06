@@ -37,10 +37,15 @@ module.exports = {
     	search: function(){
         this.notFound = false;
 
-    		if(this.q.length < 3)
-    			return;
+    		if(this.q.length < 1)
+    		{ 
+                this.getUnderReviews()
+                return;
+            }
+            
     		// GET request
-        
+            
+            this.gistsUnderReview = [];
           
       		this.$http({url: 'https://packagist.org/search.json?q='+this.q, method: 'GET'}).then(function (response) {
 
