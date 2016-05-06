@@ -42,7 +42,7 @@ module.exports = {
                 this.getUnderReviews()
                 return;
             }
-            
+
     		// GET request
             
             this.gistsUnderReview = [];
@@ -118,6 +118,7 @@ module.exports = {
 
         getUnderReviews: function(){
             var that =this
+            this.gists = [];
             client({path: '/under-review'}).then(function(response){
                 that.gistsUnderReview = response.entity.data
             })
