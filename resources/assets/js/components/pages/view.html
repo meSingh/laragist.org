@@ -29,7 +29,7 @@
             <div class="container">
 
                 <div class="row"> <!--  TOP ROW  -->
-                    <div class="col-md-9">
+                    <div class="col-md-8">
 
                         <div class="install">
                             <i class="fa fa-fw fa-download"></i>
@@ -60,30 +60,66 @@
                         <!--  THIRD ROW  -->
 
                     </div>
-                    <div class="col-md-3 details">
+                    <div class="col-md-4 details">
                         <div class="block">
-                            <ul class="list-inline authors">
-                                <li v-for="author in gist.authors">
-                                    <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=100" alt="{{ author.name }}" title="{{ author.name }}">
-                                </li>
-                            </ul>
 
-                            <div class="stats">
-                                <h3>
-                                    <i class="fa fa-download"></i>
-                                    {{ gist.downloads_total}}
-                                </h3>
-                                <h3>
-                                    <i class="fa fa-heart"></i>
-                                    {{ gist.favorites }}
-                                </h3>
-                            </div>
+                            <template v-if="gist.authors.length > 1">
+                                <ul class="list-inline authors">
+                                    <li v-for="author in gist.authors">
+                                        <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=100" alt="{{ author.name }}" title="{{ author.name }}">
+                                        <h4>{{ author.name }}</h4>
+                                    </li>
+                                </ul>
 
-                            <div class="btns">
-                                <a href="{{ gist.repository }}" target="_blank" class="btn btn-block repository">
+                                <hr>
+
+                                <div class="stats">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3>
+                                                <i class="fa fa-download"></i>
+                                                {{ gist.downloads_total}}
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>
+                                                <i class="fa fa-heart"></i>
+                                                {{ gist.favorites }}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            <template  v-if="gist.authors.length == 1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-inline authors-alt">
+                                            <li v-for="author in gist.authors">
+                                                <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=120" alt="{{ author.name }}" title="{{ author.name }}">
+                                                <h4>{{ author.name }}</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="stats-alt">
+                                            <div class="box">
+                                                <i class="fa fa-download"></i>
+                                                <h3>{{ gist.downloads_total }}</h3>
+                                            </div>
+                                            <div class="box">
+                                                <i class="fa fa-heart"></i>
+                                                <h3>{{ gist.favorites }}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <div class="btns btn-group btn-group-justified">
+                                <a href="{{ gist.repository }}" target="_blank" class="btn btn-default repository">
                                     View Source
                                 </a>
-                                <a href="{{ gist.homepage }}" target="_blank" class="btn btn-block homepage">
+                                <a href="{{ gist.homepage }}" target="_blank" class="btn btn-default homepage">
                                     Visit Homepage
                                 </a>
                             </div>
@@ -103,62 +139,65 @@
                         
 
                         <div class="version block">
-                            <select>
-                                <option v-for="version in gist.versions" value="{{version.version}}">{{version.version}}</option>
-                            </select>
+                            <div class="" v-bind:class="{'version-limit': !versionPulled}">
+                                <select>
+                                    <option v-for="version in gist.versions" value="{{version.version}}">{{version.version}}</option>
+                                </select>
 
-                            <p>{{ version.time }}</p>
-                            
-                            <hr>
+                                <p>{{ version.time }}</p>
+                                
+                                <hr>
 
-                            <div v-show="version.require">
-                                <h4>requires</h4>                                    
-                                <ul>
-                                    <li v-for="(package, number) in version.require">
-                                        <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
-                                    </li>
-                                </ul>
+                                <div v-show="version.require">
+                                    <h4>requires</h4>                                    
+                                    <ul>
+                                        <li v-for="(package, number) in version.require">
+                                            <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-show="version.require_dev">
+                                    <h4>requires (dev)</h4>
+                                    <ul>
+                                        <li v-for="(package, number) in version.require_dev">
+                                            <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-show="version.suggest">
+                                    <h4>suggests</h4>
+                                    <ul>
+                                        <li v-for="(package, number) in version.suggest">
+                                            <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-show="version.provides">
+                                    <h4>provides</h4>
+                                    <ul>
+                                        <li v-for="(package, number) in version.provides">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-show="version.conflicts">
+                                    <h4>conflicts</h4>
+                                    <ul>
+                                        <li v-for="(package, number) in version.conflicts">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div v-show="version.replaces">
+                                    <h4>replaces</h4>
+                                    <ul>
+                                        <li v-for="(package, number) in version.replaces">
+                                            {{ package }}: {{number}}
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div v-show="version.require_dev">
-                                <h4>requires (dev)</h4>
-                                <ul>
-                                    <li v-for="(package, number) in version.require_dev">
-                                        <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
-                                    </li>
-                                </ul>
-                            </div>
-                            <div v-show="version.suggest">
-                                <h4>suggests</h4>
-                                <ul>
-                                    <li v-for="(package, number) in version.suggest">
-                                        <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
-                                    </li>
-                                </ul>
-                            </div>
-                            <div v-show="version.provides">
-                                <h4>provides</h4>
-                                <ul>
-                                    <li v-for="(package, number) in version.provides">
-                                        {{ package }}: {{number}}
-                                    </li>
-                                </ul>
-                            </div>
-                            <div v-show="version.conflicts">
-                                <h4>conflicts</h4>
-                                <ul>
-                                    <li v-for="(package, number) in version.conflicts">
-                                        {{ package }}: {{number}}
-                                    </li>
-                                </ul>
-                            </div>
-                            <div v-show="version.replaces">
-                                <h4>replaces</h4>
-                                <ul>
-                                    <li v-for="(package, number) in version.replaces">
-                                        {{ package }}: {{number}}
-                                    </li>
-                                </ul>
-                            </div>
+                            <div class="pull-over" v-show="!versionPulled" v-on:click="versionPulled=1"><i class="fa fa-caret-down"></i></div>
                         </div><!--  version block  -->
                         
                     </div>

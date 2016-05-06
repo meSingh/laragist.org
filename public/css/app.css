@@ -8619,6 +8619,7 @@ span.text-white a {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   position: relative;
+  border-bottom: 4px solid #F6635B;
   transition: all 0.3s ease;
   /*&:hover .latest { background-color: #FFF; color: #333; }*/
 }
@@ -8651,6 +8652,7 @@ span.text-white a {
 .packages .package .wrapper:hover {
   background-color: #F6635B;
   color: #FFF;
+  border-color: #E74C3C;
 }
 
 .packages .package .wrapper:hover .latest {
@@ -8863,13 +8865,39 @@ span.text-white a {
 
 .package .content .details .authors {
   margin-bottom: 0;
-  text-align: center;
 }
 
 .package .content .details .authors li img {
   max-width: 100px;
   border: 5px solid #F1F1F1;
-  margin: 0 -5px 10px 0;
+  margin: 0 -5px 5px 0;
+}
+
+.package .content .details .authors li h4 {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.package .content .details .authors-alt {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.package .content .details .authors-alt li img {
+  max-width: 120px;
+  border: 5px solid #F1F1F1;
+  margin: 0 -5px 5px 0;
+}
+
+.package .content .details .authors-alt li h4 {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.package .content .details hr {
+  margin: 10px 0;
 }
 
 .package .content .details .stats {
@@ -8887,8 +8915,37 @@ span.text-white a {
   margin: 0 10px;
 }
 
+.package .content .details .stats-alt {
+  margin-bottom: 10px;
+  margin-left: -15px;
+}
+
+.package .content .details .stats-alt .box {
+  background: #F8F8F8;
+  margin: 10px 0;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.package .content .details .stats-alt .box i {
+  display: inline-block;
+  padding: 12px;
+  font-size: 15px;
+  border-right: 1px solid #E2E2E2;
+}
+
+.package .content .details .stats-alt .box h3 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #2C3E50;
+  font-family: "Roboto", serif;
+  display: inline-block;
+  padding: 10px;
+}
+
 .package .content .details .btns .btn {
   color: #FFF;
+  border: none;
 }
 
 .package .content .details .btns .btn:hover {
@@ -8911,21 +8968,25 @@ span.text-white a {
   background-color: #FFA024;
 }
 
-.package .content .version hr {
-  border-color: #F6635B;
-}
-
 .package .content .version h4 {
   font-weight: bold;
   font-size: 16px;
 }
 
 .package .content .version ul {
-  padding: 20px 0 20px 20px;
+  padding: 10px 0 10px 20px;
 }
 
 .package .content .version ul li {
   list-style: disc;
+}
+
+.package .content .version > div {
+  overflow: hidden;
+}
+
+.package .content .version .version-limit {
+  max-height: 678px;
 }
 
 .package .content .readme {
