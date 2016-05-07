@@ -8575,7 +8575,7 @@ span.text-white a {
 .search .btn {
   border: none;
   color: #333;
-  min-width: 200px;
+  min-width: 192px;
   text-align: right;
   box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
 }
@@ -8609,6 +8609,7 @@ span.text-white a {
 
 .packages .package {
   margin-bottom: 15px;
+  transition: all 0.3s ease;
 }
 
 .packages .package .wrapper {
@@ -9054,6 +9055,10 @@ span.text-white a {
   margin-top: 0;
 }
 
+.about .content .makers {
+  margin-bottom: 10px;
+}
+
 .about .content .makers h3 {
   margin-top: 40px;
   margin-bottom: 20px;
@@ -9073,6 +9078,10 @@ span.text-white a {
   font-size: 22px;
   text-align: center;
   margin-bottom: 10px;
+}
+
+.about .content .makers .maker .social {
+  margin: 0;
 }
 
 .package .package-aside.versions-wrapper,

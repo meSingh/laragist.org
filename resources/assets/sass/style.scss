@@ -174,7 +174,7 @@ span.text-white a {
     .btn {
         border: none;
         color: #333;
-        min-width: 200px;
+        min-width: 192px;
         text-align: right;
         @include shadow();
         
@@ -200,12 +200,12 @@ span.text-white a {
     }
 }
 
-
 .packages { 
     padding: 30px 0 20px;
 
     .package { 
         margin-bottom: 15px; 
+        @include transition();
         
         .wrapper {
             font-family: 'Roboto', sans-serif;
@@ -654,6 +654,7 @@ span.text-white a {
         }
 
         .makers {
+            margin-bottom: 10px;
 
             h3 {
                 margin-top: 40px;
@@ -673,6 +674,10 @@ span.text-white a {
                     font-size: 22px;
                     text-align: center;
                     margin-bottom: 10px;
+                }
+
+                .social {
+                    margin: 0;
                 }
             }
         }
