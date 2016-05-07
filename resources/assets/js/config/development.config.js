@@ -12,7 +12,7 @@ var config = {
   social: {
     facebook: '',
     twitter: '',
-    github: ''
+    github: 'khurafat'
   },
   debug: true
 }
