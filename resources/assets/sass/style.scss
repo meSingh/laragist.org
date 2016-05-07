@@ -685,6 +685,67 @@ span.text-white a {
 }
 
 
+.support {
+
+
+    .welcome {
+        padding: 30px 0;
+        @include shadow();
+
+        h2 {
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    .content {
+        padding-top: 30px;
+
+        .block {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            @include shadow();
+
+            .page-header {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.promo {
+    background-color: #FFF;
+    padding: 20px;
+    @include shadow();
+}
+
+.btn-custom {
+    background-color: $color-yellow;
+    border-color: $color-yellow;
+    color: #FFF;
+    min-width: 300px;
+    border-radius: 0;
+    @include shadow();
+
+    &:hover {
+        color: #FFF;
+    }
+}
+
+.btn-lara {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: #FFF;
+    font-size: 16px;
+    min-width: 250px;
+    border-radius: 0;
+    @include shadow();
+
+    &:hover { color: #FFF; }
+}
 
 
 .package .package-aside.versions-wrapper, .package .version-details {

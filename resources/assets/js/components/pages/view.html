@@ -6,16 +6,16 @@
         <section class="welcome">
             <div class="container">
                 <h2>
-                    {{ gist.name }} 
+                    {{ selectedVersion.name }} 
                     <small class="latest">
                         <i class="fa fa-fw fa-code-fork"></i>
-                        {{ gist.version }}
+                        {{ selectedVersion.version }}
                     </small>
                 </h2>
                 <div class="cats">
-                    <ul class="list-inline pull-right" v-show="gist.licenses[0]">
+                    <ul class="list-inline pull-right" v-show="selectedVersion.licenses[0]">
                         <li><i class="fa fa-fw fa-copyright"></i></li>
-                        <li v-for="license in gist.licenses">{{license}}</li>
+                        <li v-for="license in selectedVersion.licenses">{{license}}</li>
                     </ul>
                     <ul class="list-inline">
                         <li><i class="fa fa-fw fa-bars"></i></li>
@@ -33,18 +33,18 @@
 
                         <div class="install">
                             <i class="fa fa-fw fa-download"></i>
-                            <code>composer require {{ gist.name }}</code>
+                            <code>composer require {{ selectedVersion.name }}</code>
                         </div>
 
                         <div class="description block" v-show="gist.description">
                             <!-- <div class="page-header">
                                 <h3>Description</h3>
                             </div> -->
-                            <p>{{gist.description}}</p>
+                            <p>{{selectedVersion.description}}</p>
 
-                            <ul class="list-inline tags" v-show="gist.keywords[0]">
+                            <ul class="list-inline tags" v-show="selectedVersion.keywords[0]">
                                 <li><i class="fa fa-fw fa-tags"></i></li>
-                                <li v-for="keyword in gist.keywords">#{{keyword}}</li>
+                                <li v-for="keyword in selectedVersion.keywords">#{{keyword}}</li>
                             </ul>
                         </div>
 
@@ -63,9 +63,9 @@
                     <div class="col-md-4 details">
                         <div class="block">
 
-                            <template v-if="gist.authors.length > 1">
+                            <template v-if="selectedVersion.authors.length > 1">
                                 <ul class="list-inline authors">
-                                    <li v-for="author in gist.authors">
+                                    <li v-for="author in selectedVersion.authors">
                                         <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=100" alt="{{ author.name }}" title="{{ author.name }}">
                                         <h4>{{ author.name }}</h4>
                                     </li>
@@ -90,7 +90,7 @@
                                     </div>
                                 </div>
                             </template>
-                            <template  v-if="gist.authors.length == 1">
+                            <template  v-if="selectedVersion.authors.length == 1">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <ul class="list-inline authors-alt">
@@ -140,58 +140,58 @@
 
                         <div class="version block">
                             <div class="" v-bind:class="{'version-limit': !versionPulled}">
-                                <select>
-                                    <option v-for="version in gist.versions" value="{{version.version}}">{{version.version}}</option>
+                                <select v-model="selectedVersion" v-on:change="selectVersion">
+                                    <option v-for="version in gist.versions" v-bind:value="version">{{version.version}}</option>
                                 </select>
 
                                 <p>{{ version.time }}</p>
                                 
                                 <hr>
 
-                                <div v-show="version.require">
+                                <div v-show="selectedVersion.require">
                                     <h4>requires</h4>                                    
                                     <ul>
-                                        <li v-for="(package, number) in version.require">
+                                        <li v-for="(package, number) in selectedVersion.require">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div v-show="version.require_dev">
+                                <div v-show="selectedVersion.require_dev">
                                     <h4>requires (dev)</h4>
                                     <ul>
-                                        <li v-for="(package, number) in version.require_dev">
+                                        <li v-for="(package, number) in selectedVersion.require_dev">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div v-show="version.suggest">
+                                <div v-show="selectedVersion.suggest">
                                     <h4>suggests</h4>
                                     <ul>
-                                        <li v-for="(package, number) in version.suggest">
+                                        <li v-for="(package, number) in selectedVersion.suggest">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div v-show="version.provides">
+                                <div v-show="selectedVersion.provides">
                                     <h4>provides</h4>
                                     <ul>
-                                        <li v-for="(package, number) in version.provides">
+                                        <li v-for="(package, number) in selectedVersion.provides">
                                             {{ package }}: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div v-show="version.conflicts">
+                                <div v-show="selectedVersion.conflicts">
                                     <h4>conflicts</h4>
                                     <ul>
-                                        <li v-for="(package, number) in version.conflicts">
+                                        <li v-for="(package, number) in selectedVersion.conflicts">
                                             {{ package }}: {{number}}
                                         </li>
                                     </ul>
                                 </div>
-                                <div v-show="version.replaces">
+                                <div v-show="selectedVersion.replaces">
                                     <h4>replaces</h4>
                                     <ul>
-                                        <li v-for="(package, number) in version.replaces">
+                                        <li v-for="(package, number) in selectedVersion.replaces">
                                             {{ package }}: {{number}}
                                         </li>
                                     </ul>

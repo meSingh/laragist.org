@@ -9084,6 +9084,66 @@ span.text-white a {
   margin: 0;
 }
 
+.support .welcome {
+  padding: 30px 0;
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
+}
+
+.support .welcome h2 {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 10px;
+}
+
+.support .content {
+  padding-top: 30px;
+}
+
+.support .content .block {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
+}
+
+.support .content .block .page-header {
+  margin-top: 0;
+}
+
+.promo {
+  background-color: #FFF;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
+}
+
+.btn-custom {
+  background-color: #FC930A;
+  border-color: #FC930A;
+  color: #FFF;
+  min-width: 300px;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
+}
+
+.btn-custom:hover {
+  color: #FFF;
+}
+
+.btn-lara {
+  background-color: #F6635B;
+  border-color: #F6635B;
+  color: #FFF;
+  font-size: 16px;
+  min-width: 250px;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
+}
+
+.btn-lara:hover {
+  color: #FFF;
+}
+
 .package .package-aside.versions-wrapper,
 .package .version-details {
   margin-top: 20px;
