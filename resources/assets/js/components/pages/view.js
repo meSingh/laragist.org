@@ -9,7 +9,8 @@ module.exports = {
             version: [],
             versionsListPulled: 0,
             readmePulled: 0,
-            versionPulled: 0
+            versionPulled: 0,
+            selectedVersion: []
         }
     },
 
@@ -25,9 +26,9 @@ module.exports = {
             client({path: '/packages/'+this.user+'/'+this.name}).then(function(response){
                 that.gist =  response.entity.data.package;
                 that.version_id = that.gist.version;
-                that.version = that.gist.latest;
-                that.version.require_dev = that.gist.latest['require-dev'];
-                that.getreadme();
+                that.selectedVersion = that.gist.latest;
+                that.selectedVersion.require_dev = that.gist.latest['require-dev'];
+                that.getreadme(that.version_id);
             }, 
             function(errorResponse){
                 console.log('error');
@@ -53,16 +54,24 @@ module.exports = {
             var pathname = url.pathname.replace('.git','')
             host = host.replace('{repo}',pathname);
 
-            this.$http({url:  host+ this.version_id + '/readme.md'}).then(
+            this.$http({url:  host+ version + '/readme.md'}).then(
                 function(response){
                     that.readme = converter.makeHtml(response.data);
                 },
                 function(errorResponse){
-                    this.$http({url: host+ this.version_id + '/README.md'}).then(
+                    this.$http({url: host+ version + '/README.md'}).then(
                         function(response){
                             that.readme = converter.makeHtml(response.data);                        })
 
                 })
+        },
+
+        selectVersion: function(){
+            console.log(this.selectedVersion)
+
+            this.getreadme(this.selectedVersion.version)
+            this.selectedVersion.require_dev = that.selectedVersion.latest['require-dev'];
+
         }
 
     }
