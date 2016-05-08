@@ -1,29 +1,34 @@
 module.exports = {
 
-  configRouter: function (router) {
+    configRouter: function (router) {
 
-    router.map({
-      '/auth': {
-        component: require('./compiled/pages/auth.vue'),
-        subRoutes: {
-          '/login': {
-            component: require('./compiled/pages/auth/login.vue'),
-            guest: true
-          },
-          '/register': {
-            component: require('./compiled/pages/auth/register.vue'),
-            guest: true
-          },
-          '/profile': {
-            component: require('./compiled/pages/auth/profile.vue'),
-            auth: true
-          },
-          '/logout': {
-            component: require('./compiled/pages/auth/logout.vue'),
-            auth: true
-          }
-        }
-      },
+        router.map({
+            '/auth': {
+                component: require('./compiled/pages/auth.vue'),
+                subRoutes: 
+                {
+                    '/login': 
+                    {
+                        component: require('./compiled/pages/auth/login.vue'),
+                        guest: true
+                    },
+                    '/register': 
+                    {
+                    component: require('./compiled/pages/auth/register.vue'),
+                    guest: true
+                },
+                '/profile': 
+                {
+                    component: require('./compiled/pages/auth/profile.vue'),
+                    auth: true
+                },
+                '/logout': 
+                {
+                    component: require('./compiled/pages/auth/logout.vue'),
+                    auth: true
+                }
+            }
+        },
       '/home': {
         component: require('./compiled/pages/home.vue'),
         subRoutes: {
@@ -89,5 +94,8 @@ module.exports = {
       }
       transition.next()
     })
-  }
+
+
+        
+    }
 }

@@ -115,3 +115,8 @@ module.exports = {
     }
 
 }
+
+Vue.transition('slideIn', {
+  enterClass: 'slideInUp',
+  leaveClass: 'slideOutDown'
+});

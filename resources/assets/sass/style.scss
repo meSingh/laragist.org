@@ -174,7 +174,7 @@ span.text-white a {
     .btn {
         border: none;
         color: #333;
-        min-width: 200px;
+        min-width: 192px;
         text-align: right;
         @include shadow();
         
@@ -200,12 +200,12 @@ span.text-white a {
     }
 }
 
-
 .packages { 
     padding: 30px 0 20px;
 
     .package { 
         margin-bottom: 15px; 
+        @include transition();
         
         .wrapper {
             font-family: 'Roboto', sans-serif;
@@ -654,6 +654,7 @@ span.text-white a {
         }
 
         .makers {
+            margin-bottom: 10px;
 
             h3 {
                 margin-top: 40px;
@@ -674,12 +675,77 @@ span.text-white a {
                     text-align: center;
                     margin-bottom: 10px;
                 }
+
+                .social {
+                    margin: 0;
+                }
             }
         }
     }
 }
 
 
+.support {
+
+
+    .welcome {
+        padding: 30px 0;
+        @include shadow();
+
+        h2 {
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    .content {
+        padding-top: 30px;
+
+        .block {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            @include shadow();
+
+            .page-header {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.promo {
+    background-color: #FFF;
+    padding: 20px;
+    @include shadow();
+}
+
+.btn-custom {
+    background-color: $color-yellow;
+    border-color: $color-yellow;
+    color: #FFF;
+    min-width: 300px;
+    border-radius: 0;
+    @include shadow();
+
+    &:hover {
+        color: #FFF;
+    }
+}
+
+.btn-lara {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: #FFF;
+    font-size: 16px;
+    min-width: 250px;
+    border-radius: 0;
+    @include shadow();
+
+    &:hover { color: #FFF; }
+}
 
 
 .package .package-aside.versions-wrapper, .package .version-details {
@@ -840,7 +906,7 @@ header .container {
 header .logo {
   max-width: 200px;
   display: inline-block;
-padding: 7px 0 0;
+    // padding: 7px 0 0; // beta
 }
 header .btn {
   margin-right: 16px;
