@@ -34,6 +34,14 @@
       ga('create', 'UA-77371596-1', 'auto');
       ga('send', 'pageview');
 
+       // Send google page view..
+        window.router.afterEach(function (transition) {
+            ga('send', {
+                hitType: 'pageview',
+                page: transition.to.path
+            })
+        })
+
     </script>
     
 </body>
