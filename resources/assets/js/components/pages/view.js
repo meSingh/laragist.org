@@ -15,8 +15,8 @@ module.exports = {
     },
 
     created: function(){
+        $('#versionsList').selectize();
         this.fetchGist();
-        
     },
 
     methods: {
@@ -66,13 +66,15 @@ module.exports = {
                 })
         },
 
-        selectVersion: function(){
-            console.log(this.selectedVersion)
+        // watch: {
+        //     selectedVersion: function(){
+        //         console.log(this.selectedVersion)
 
-            this.getreadme(this.selectedVersion.version)
-            this.selectedVersion.require_dev = that.selectedVersion.latest['require-dev'];
+        //     this.getreadme(this.selectedVersion.version)
+        //     this.selectedVersion.require_dev = this.selectedVersion.latest['require-dev'];
 
-        }
+        //     }
+        // }
 
     }
 }
