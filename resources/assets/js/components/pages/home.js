@@ -79,19 +79,16 @@ module.exports = {
             
             this.pagination.current_page = 1;
 
-            var current = ''
+            var categories = [];
+            category.clicked = category.clicked ? 0 : 1;
+
             this.categories.forEach(function(item){
                 if(item.clicked == 1)
-                    current = item
-                
-                item.clicked = 0
+                    categories.push(item.id)
             })
 
-            if(current.id !== category.id)
-                category.clicked= 1
-
-            if(category.clicked == 1)
-              this.addtional = '&cid='+category.id;
+            if(categories.length)
+              this.addtional = '&cid='+ JSON.stringify(categories);
             else
               this.addtional = '';
 
