@@ -9144,6 +9144,10 @@ span.text-white a {
   color: #FFF;
 }
 
+.promo-btn {
+  border-bottom: 1px solid;
+}
+
 .package .package-aside.versions-wrapper,
 .package .version-details {
   margin-top: 20px;
