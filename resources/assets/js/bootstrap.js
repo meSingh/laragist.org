@@ -3,9 +3,6 @@ window.Vue = require('vue')
 Vue.use(require('vue-resource'))
 window.VueRouter = require('vue-router')
 
-var selectize = require('vue-selectize');
-Vue.use(selectize);
-
 // Insert vue-router and vue-resource into Vue
 
 // Import the actual routes, aliases, ...

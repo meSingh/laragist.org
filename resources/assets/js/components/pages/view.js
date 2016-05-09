@@ -15,7 +15,6 @@ module.exports = {
     },
 
     created: function(){
-        $('#versionsList').selectize();
         this.fetchGist();
     },
 
