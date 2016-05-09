@@ -1,0 +1,251 @@
+
+.package {
+
+    .welcome {
+        padding: 30px 0;
+        @include shadow();
+
+        p { padding: 0; }
+
+        h2 {
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: bold;
+            small { font-family: $font-stack; }
+        }
+
+        .latest {
+            color: #FFF;
+            background: RGBA(51,51,51,0.10); 
+            padding: 5px 10px;
+            box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+            float: right;
+            padding: 10px;
+            position: relative;
+            @include transition();
+        }
+
+        .cats {
+            color: #FFF;
+
+            ul { 
+                margin-bottom: 0; 
+
+                li { 
+                    font-size: 11px; 
+                    padding: 0 10px; 
+                    background: RGBA(51,51,51,0.10); 
+                    margin: 0 5px; 
+
+                    &:first-child {
+                        margin: 0 1px 0 0;
+                    }
+                }
+
+                &:first-child {
+                    font-size: 13px !important;
+                }
+            }
+        }
+    }
+
+    .content {
+        padding-top: 30px;
+
+        .block {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            @include shadow();
+
+            .page-header {
+                margin-top: 0;
+            }
+        }
+
+        .pull-over {
+            text-align: center;
+            border-top: 1px dotted;
+            border-bottom: 1px dotted;
+            margin: 5px 0;
+
+            &:hover {
+                background: #F6635B;
+                color: #fff;
+                border-color: #FFF;
+            }
+        }
+
+        .install {
+            position: relative;
+            margin-bottom: 20px;
+
+            i {
+                position: absolute;
+                left: 15px;
+                top: 14px;
+                color: #f6635b;
+            }
+            code {
+                display: block;
+                padding: 8px 20px 8px 40px;
+                border: 1px solid #f6635b;
+                color: #f6635b;
+                background-color: #F9F0EF;
+            }
+        }
+
+        .description {
+
+            .tags {
+                color: #f6635b;
+
+                ul { 
+                    margin-bottom: 0; 
+
+                    li { 
+                        font-size: 11px; 
+                        padding: 0;  
+                        margin: 0 4px; 
+
+                        &:first-child {
+                            margin: 0 1px 0 0;
+                        }
+                    }
+
+                    &:first-child {
+                        font-size: 13px !important;
+                    }
+                }
+            }
+        }
+
+        .details {
+
+            .authors {
+                margin-bottom: 0;
+                li {
+                    img {
+                        max-width: 100px;
+                        border: 5px solid #F1F1F1;
+                        margin: 0 -5px 5px 0;
+                    }
+
+                    h4 {
+                        font-size: 15px;
+                        font-weight: normal;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .authors-alt {
+                margin-bottom: 10px;
+                text-align: center;
+
+                li {
+                    img {
+                        max-width: 120px;
+                        border: 5px solid #F1F1F1;
+                        margin: 0 -5px 5px 0;
+                    }
+
+                    h4 {
+                        font-size: 15px;
+                        font-weight: normal;
+                        text-align: center;
+                    }
+                }
+            }
+
+            hr {
+                margin: 10px 0;
+            }
+
+            .stats {
+                margin-bottom: 10px;
+                h3 {
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: $color-blue;
+                    font-family: $font-stack-alt;
+                    i { margin: 0 10px; }
+                }
+            }
+
+            .stats-alt {
+                margin-bottom: 10px;
+                margin-left: -15px;
+
+                .box {
+                    background: #F8F8F8;
+                    margin: 10px 0;
+                    width: 100%;
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+                    i {
+                        display: inline-block;
+                        padding: 12px;
+                        font-size: 15px;
+                        border-right: 1px solid #E2E2E2;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #2C3E50;
+                        font-family: "Roboto", serif;
+                        display: inline-block;
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .btns {
+
+                .btn {
+                    color: #FFF;
+                    border: none;
+                    &:hover { color: #FFF; }
+                }
+                .repository {
+                    background-color: $color-blue;
+                    &:hover { background-color: #2A4867 }
+                }
+                .homepage {
+                    background-color: $color-yellow;
+                    &:hover { background-color: #FFA024 }
+                }
+            }
+        }
+
+        .version {
+
+            h4 {
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            ul {
+                padding: 10px 0 10px 20px;
+                li { list-style: disc; }
+            }
+
+            > div {
+                overflow: hidden;
+            }
+
+            .version-limit {
+                max-height: 678px;
+            }
+        }
+
+        .readme {
+            overflow: hidden;
+        }
+        .readme-limit{
+            max-height: 800px;
+        }
+    }
+}
