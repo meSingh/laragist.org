@@ -140,6 +140,8 @@
 
                         <div class="version block">
                             <div class="" v-bind:class="{'version-limit': !versionPulled}">
+                                    <fire-select :options="gist.versions"></fire-select>
+
                                 <select id="versionsList" v-model="selectedVersion" v-on:change="selectVersion">
                                     <option v-for="version in gist.versions" v-bind:value="version">{{version.version}}</option>
                                 </select>

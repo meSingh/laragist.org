@@ -24,6 +24,7 @@ module.exports = {
                 category_id: ""
             },
             categories: [],
+            selectedCategories: [],
             gistsUnderReview : []
     	};
     },
@@ -71,6 +72,7 @@ module.exports = {
     	},
 
         selectGist: function(gist){
+            var that  =this
             this.selectedGist.name = gist.name
             this.error = ""
             this.errors = {
@@ -79,14 +81,54 @@ module.exports = {
                 category_id: ""
             }
             this.submitted = false
+                
+            this.categories.forEach(function(c){
+                    c.selected = 0
+            })   
+
+            var $select = $('#category_id').selectize({
+                persist: false,
+                    maxItems: null,
+                    valueField: 'value',
+                    labelField: 'label',
+                    searchField: ['label'],
+                    options: this.categories
+                })
+
+            var selectize = $select[0].selectize;
+
+            selectize.on('item_add', function(value, $item){
+                that.categories.forEach(function(c){
+                    if( $item[0].dataset.value == c.value )
+                        c.selected = 1
+
+                })
+            })
+
+
+            selectize.on('item_remove', function(value, $item){
+                that.categories.forEach(function(c){
+                    if( $item[0].dataset.value == c.value )
+                        c.selected = 0
+
+                })
+            })
+
         },
 
         getCategories: function(){
             var that = this
             client({path:'/categories'}).then(function(response){
                 response.entity.data.forEach(function(category){
-                    that.categories.push(category)
+                    that.categories.push({
+                        value: category.id,
+                        label: category.name,
+                        selected: 0
+                    })
                 })
+
+
+
             })
         },
 
@@ -97,6 +139,16 @@ module.exports = {
                 email: "",
                 category_id: ""
             }
+            console.log(this.categories);
+            
+            //  Filter selected Categories to send with form
+            var categories = [];
+            this.categories.forEach(function(category){
+                if(category.selected == 1)
+                    categories.push(category.value)
+            })
+            this.selectedGist.category_id = categories;
+
             var that = this
             client({path: '/submit' ,entity:this.selectedGist}).then(
                 function(response){
