@@ -1,0 +1,53 @@
+
+.support {
+
+
+    .welcome {
+        padding: 30px 0;
+        @include shadow();
+
+        h2 {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 5px;
+        }
+
+        p { padding: 0; }
+    }
+
+    .content {
+        padding-top: 30px;
+
+        .block {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            @include shadow();
+
+            .page-header {
+                margin-top: 0;
+            }
+
+            .col-md-5 h3 {
+                padding-top: 2.3em;
+            }
+        }
+    }
+}
+
+
+.btn-custom {
+    background-color: $color-yellow;
+    border-color: $color-yellow;
+    color: #FFF;
+    min-width: 300px;
+    border-radius: 0;
+    @include shadow();
+
+    &:hover {
+        color: #FFF;
+    }
+}
+
+

@@ -29,6 +29,10 @@ $navbar-height: 65px;
 @import "elements/tables";
 @import "elements/tooltips";
 @import "style";
+@import "app/home";
+@import "app/package";
+@import "app/about";
+@import "app/support";
 @import "responsive";
 
 /**
@@ -40,3 +44,4 @@ $navbar-height: 65px;
 
 @import "node_modules/selectize/dist/css/selectize";
 @import "node_modules/selectize/dist/css/selectize.bootstrap3";
+

@@ -44,6 +44,11 @@ module.exports = {
                 return;
             }
 
+            if(this.q.length < 3)
+            { 
+                return;
+            }
+
     		// GET request
             
             this.gistsUnderReview = [];
