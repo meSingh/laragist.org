@@ -10,14 +10,12 @@
                 <div class="col-md-8">
                     <h2>Get support for laravel packages</h2>
                     <p>Enter your email to get notified when we launch & join our slack community.</p>
-                    <form action="#" v-on:submit="sendEmail()">
-                        <div class="input-group">
-                            <input type="email" id="searchInput" v-model="subscriber.email" class="form-control input-lg" placeholder="Enter your email">
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-custom btn-lg" type="button">Subscribe!</button>
-                            </span>
-                        </div>
-                    </form>
+                    <div class="input-group">
+                        <input type="email" id="searchInput" v-model="subscriber.email" class="form-control input-lg" placeholder="Enter your email">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-custom btn-lg" v-on:click="sendEmail()" type="button">Subscribe!</button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
