@@ -17,5 +17,5 @@ elixir(function (mix) {
        'resources/assets/js/app.+(js|css|html)'
      ], 'resources/assets/js/compiled')
      .browserify('bootstrap.js', 'public/js/app.js')
-     .scripts(['../../../node_modules/selectize/dist/js/standalone/selectize.min.js'], 'public/js/selectize.js')
+     // .scripts(['../../../node_modules/selectize/dist/js/standalone/selectize.min.js'], 'public/js/selectize.js')
 })

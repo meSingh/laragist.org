@@ -1,7 +1,7 @@
 module.exports = {
     data: function(){
-	    return {
-    		gist: [],
+        return {
+            gist: [],
             user :this.$route.params.user,
             name: this.$route.params.name,
             readme: '',
@@ -19,7 +19,7 @@ module.exports = {
     },
 
     methods: {
-    	fetchGist: function(){
+        fetchGist: function(){
             var that = this
 
             client({path: '/packages/'+this.user+'/'+this.name}).then(function(response){
@@ -39,7 +39,7 @@ module.exports = {
             function(errorResponse){
                 console.log('error');
             })
-    	},
+        },
 
         versionsList : function(){
 
@@ -72,15 +72,13 @@ module.exports = {
                 })
         },
 
-        // watch: {
-        //     selectedVersion: function(){
-        //         console.log(this.selectedVersion)
+        selectVersion: function(){
+            console.log(this.selectedVersion)
 
-        //     this.getreadme(this.selectedVersion.version)
-        //     this.selectedVersion.require_dev = this.selectedVersion.latest['require-dev'];
+            this.getreadme(this.selectedVersion.version)
+            this.selectedVersion.require_dev = that.selectedVersion.latest['require-dev'];
 
-        //     }
-        // }
+        }
 
     }
 }
