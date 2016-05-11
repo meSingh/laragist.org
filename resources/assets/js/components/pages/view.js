@@ -30,10 +30,34 @@ module.exports = {
                 that.selectedVersion = that.gist.latest;
                 that.selectedVersion.require_dev = that.gist.latest['require-dev'];
                 that.getreadme(that.version_id);
+
+                var $select = $('#versionsList').selectize({
+                    persist: false,
+                        maxItems: 1,
+                        valueField: 'version',
+                        labelField: 'version',
+                        searchField: ['version'],
+                        options: that.gist.versions
+                    })
+                var selectize = $select[0].selectize;
+
+                // Selectize events for items selected and deselected
+                selectize.on('item_add', function(value, $item){
+                    that.gist.versions.forEach(function(g){
+                        if( $item[0].dataset.value == g.version )
+                            {
+                                var gist = g;
+                                that.selectedVersion = g;
+                                that.selectVersion();
+                            }
+                    })
+                })
             }, 
             function(errorResponse){
                 console.log('error');
             })
+
+
         },
 
         versionsList : function(){
@@ -65,6 +89,7 @@ module.exports = {
                             that.readme = converter.makeHtml(response.data);                        })
 
                 })
+
         },
 
         selectVersion: function(){

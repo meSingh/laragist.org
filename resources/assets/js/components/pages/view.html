@@ -141,8 +141,8 @@
                         <div class="version block">
                             <div class="" v-bind:class="{'version-limit': !versionPulled}">
 
-                                <select id="versionsList" v-model="selectedVersion" v-on:change="selectVersion">
-                                    <option v-for="version in gist.versions" v-bind:value="version">{{version.version}}</option>
+                                <select id="versionsList">
+
                                 </select>
 
                                 <p>{{ selectedVersion.time }}</p>
