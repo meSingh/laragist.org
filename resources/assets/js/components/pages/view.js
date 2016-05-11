@@ -1,7 +1,7 @@
 module.exports = {
     data: function(){
-	    return {
-    		gist: [],
+        return {
+            gist: [],
             user :this.$route.params.user,
             name: this.$route.params.name,
             readme: '',
@@ -19,18 +19,13 @@ module.exports = {
     },
 
     methods: {
-    	fetchGist: function(){
+        fetchGist: function(){
             var that = this
 
             client({path: '/packages/'+this.user+'/'+this.name}).then(function(response){
                 that.gist =  response.entity.data.package;
                 that.version_id = that.gist.version;
-                var versions = []
 
-                for(var key in that.gist.versions)
-                    versions.push(that.gist.versions[key])
-
-                that.gist.versions = versions;
                 console.log(that.gist.versions)
                 that.selectedVersion = that.gist.latest;
                 that.selectedVersion.require_dev = that.gist.latest['require-dev'];
@@ -39,7 +34,7 @@ module.exports = {
             function(errorResponse){
                 console.log('error');
             })
-    	},
+        },
 
         versionsList : function(){
 
@@ -72,15 +67,13 @@ module.exports = {
                 })
         },
 
-        // watch: {
-        //     selectedVersion: function(){
-        //         console.log(this.selectedVersion)
+        selectVersion: function(){
+            console.log(this.selectedVersion)
 
-        //     this.getreadme(this.selectedVersion.version)
-        //     this.selectedVersion.require_dev = this.selectedVersion.latest['require-dev'];
+            this.getreadme(this.selectedVersion.version)
+            this.selectedVersion.require_dev = this.selectedVersion['require-dev'];
 
-        //     }
-        // }
+        }
 
     }
 }
