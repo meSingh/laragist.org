@@ -87,46 +87,46 @@ module.exports = {
             //stating that package is not submitted yet
             this.submitted = false
             
-            // //Clearing out any selected categories before    
-            // this.categories.forEach(function(c){
-            //         c.selected = 0
-            // })   
+            //Clearing out any selected categories before    
+            this.categories.forEach(function(c){
+                    c.selected = 0
+            })   
 
 
-            // var $select = $('#category_id').selectize()
+            var $select = $('#category_id').selectize()
 
-            // var selectize = $select[0].selectize;
+            var selectize = $select[0].selectize;
             
-            // //Destroying previous selectize to remove selected categories
-            // selectize.destroy();
+            //Destroying previous selectize to remove selected categories
+            selectize.destroy();
 
-            // $select = $('#category_id').selectize({
-            //     persist: false,
-            //         maxItems: null,
-            //         valueField: 'value',
-            //         labelField: 'label',
-            //         searchField: ['label'],
-            //         options: this.categories
-            //     })
-            //  selectize = $select[0].selectize;
+            $select = $('#category_id').selectize({
+                persist: false,
+                    maxItems: null,
+                    valueField: 'value',
+                    labelField: 'label',
+                    searchField: ['label'],
+                    options: this.categories
+                })
+             selectize = $select[0].selectize;
 
-            // // Selectize events for items selected and deselected
-            // selectize.on('item_add', function(value, $item){
-            //     that.categories.forEach(function(c){
-            //         if( $item[0].dataset.value == c.value )
-            //             c.selected = 1
+            // Selectize events for items selected and deselected
+            selectize.on('item_add', function(value, $item){
+                that.categories.forEach(function(c){
+                    if( $item[0].dataset.value == c.value )
+                        c.selected = 1
 
-            //     })
-            // })
+                })
+            })
 
 
-            // selectize.on('item_remove', function(value, $item){
-            //     that.categories.forEach(function(c){
-            //         if( $item[0].dataset.value == c.value )
-            //             c.selected = 0
+            selectize.on('item_remove', function(value, $item){
+                that.categories.forEach(function(c){
+                    if( $item[0].dataset.value == c.value )
+                        c.selected = 0
 
-            //     })
-            // })
+                })
+            })
 
         },
 

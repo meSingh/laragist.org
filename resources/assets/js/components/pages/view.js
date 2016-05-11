@@ -25,12 +25,7 @@ module.exports = {
             client({path: '/packages/'+this.user+'/'+this.name}).then(function(response){
                 that.gist =  response.entity.data.package;
                 that.version_id = that.gist.version;
-                var versions = []
 
-                for(var key in that.gist.versions)
-                    versions.push(that.gist.versions[key])
-
-                that.gist.versions = versions;
                 console.log(that.gist.versions)
                 that.selectedVersion = that.gist.latest;
                 that.selectedVersion.require_dev = that.gist.latest['require-dev'];
@@ -76,7 +71,7 @@ module.exports = {
             console.log(this.selectedVersion)
 
             this.getreadme(this.selectedVersion.version)
-            this.selectedVersion.require_dev = that.selectedVersion.latest['require-dev'];
+            this.selectedVersion.require_dev = this.selectedVersion['require-dev'];
 
         }
 
