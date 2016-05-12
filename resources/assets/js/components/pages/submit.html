@@ -143,11 +143,12 @@
 
                             </div>
                         </div>
+                                <select id="category_id" name="category_id"></select>
+
                         <!-- Select Basic -->
                         <div class="form-group" v-bind:class="{'has-error': errors.category_id}">
                             <label class="col-md-4 control-label" for="category_id">Select Category</label>
                             <div class="col-md-6">
-                                <input id="category_id" name="category_id" class="form-control" />
                                 <span class="help-block" v-show="errors.category_id">{{ errors.category_id[0] }}</span>
 
                             </div>
