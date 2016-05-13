@@ -6,10 +6,10 @@
         <section class="welcome">
             <div class="container">
                 <h2>
-                    {{ selectedVersion.name }} 
+                    {{ gist.name }} 
                     <small class="latest">
                         <i class="fa fa-fw fa-code-fork"></i>
-                        {{ selectedVersion.version }}
+                        {{ gist.version }}
                     </small>
                 </h2>
                 <div class="cats">
@@ -33,18 +33,18 @@
 
                         <div class="install">
                             <i class="fa fa-fw fa-download"></i>
-                            <code>composer require {{ selectedVersion.name }}</code>
+                            <code>composer require {{ gist.name }}</code>
                         </div>
 
                         <div class="description block" v-show="gist.description">
                             <!-- <div class="page-header">
                                 <h3>Description</h3>
                             </div> -->
-                            <p>{{selectedVersion.description}}</p>
+                            <p>{{gist.description}}</p>
 
-                            <ul class="list-inline tags" v-show="selectedVersion.keywords[0]">
+                            <ul class="list-inline tags" v-show="gist.keywords[0]">
                                 <li><i class="fa fa-fw fa-tags"></i></li>
-                                <li v-for="keyword in selectedVersion.keywords">#{{keyword}}</li>
+                                <li v-for="keyword in gist.keywords">#{{keyword}}</li>
                             </ul>
                         </div>
 
@@ -141,7 +141,7 @@
                         <div class="version block">
                             <div class="" v-bind:class="{'version-limit': !versionPulled}">
 
-                                <select id="versionsList">
+                                <select id="versionsList"   >
 
                                 </select>
 
