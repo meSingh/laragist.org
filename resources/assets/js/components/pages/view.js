@@ -26,18 +26,19 @@ module.exports = {
                 that.gist =  response.entity.data.package;
                 that.version_id = that.gist.version;
 
-                console.log(that.gist.versions)
+                console.log([that.gist.versions[0]]);
                 that.selectedVersion = that.gist.latest;
                 that.selectedVersion.require_dev = that.gist.latest['require-dev'];
                 that.getreadme(that.version_id);
 
                 var $select = $('#versionsList').selectize({
-                    persist: false,
+                        persist: false,
                         maxItems: 1,
                         valueField: 'version',
                         labelField: 'version',
                         searchField: ['version'],
-                        options: that.gist.versions
+                        options: that.gist.versions,
+                        items:  [that.gist.versions[0]['version']]
                     })
                 var selectize = $select[0].selectize;
 
