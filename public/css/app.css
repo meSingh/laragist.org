@@ -9362,6 +9362,26 @@ a {
   padding: 0 20px 10px;
 }
 
+.packages.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #F8F8F8;
+  z-index: 99;
+}
+
+.packages.fullscreen .container {
+  width: 100%;
+}
+
+.packages.fullscreen .container .categories {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+}
+
 .search input {
   border: none;
   box-shadow: 0 0 10px rgba(92, 75, 81, 0.1);
