@@ -144,12 +144,12 @@
                         
 
                         <div class="version block">
-                            <div class="spinner" v-show="!selectedVersion.length">
+                            <div class="spinner" v-show="!selectedVersion">
                                 <div class="bounce1"></div>
                                   <div class="bounce2"></div>
                                   <div class="bounce3"></div>
                                 </div>
-                            <div class="" v-bind:class="{'version-limit': !versionPulled}" v-show="selectedVersion.length">
+                            <div class="" v-bind:class="{'version-limit': !versionPulled}" v-show="selectedVersion">
 
                                 <select id="versionsList"   >
 
