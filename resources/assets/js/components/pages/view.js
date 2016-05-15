@@ -10,7 +10,7 @@ module.exports = {
             versionsListPulled: 0,
             readmePulled: 0,
             versionPulled: 0,
-            selectedVersion: []
+            selectedVersion: null
         }
     },
 
@@ -66,6 +66,7 @@ module.exports = {
         },
 
         getreadme: function(version){
+            this.readme = ""
             var that =this
 
             //Creating dummy a element to parse repository url
