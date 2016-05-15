@@ -162,6 +162,27 @@
 }
 
 
+.packages.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #F8F8F8;
+    z-index: 99;
+
+    .container {
+        width: 100%;
+
+        .categories {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+}
+
 
 .search {
     input {

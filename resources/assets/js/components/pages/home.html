@@ -81,8 +81,8 @@
                             <span>{{ gist.version }}</span>
                         </div>
     	            <div class="info">
-    	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{ gist.name.trunc(32) }}</a></h3>
-    	                <p>{{ gist.description.trunc(120) }}</p>
+    	                <h3><a v-link="{ name: 'view', params: {user:author(gist.name), name: package(gist.name)}}">{{ gist.name.trunc(28) }}</a></h3>
+    	                <p>{{ gist.description.trunc(110) }}</p>
     	            </div>
     	            <div class="meta">
     	            	<ul class="list-unstyled">
@@ -110,7 +110,7 @@
 		</div>
 	</section>
 
-    <div class="container">
+    <div class="container text-center">
         <pagination :pagination="pagination" size="pagination-md" class="text-center" :callback="fetchGists"></pagination>
     </div>
 
