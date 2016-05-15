@@ -39,7 +39,7 @@ module.exports = {
             var that = this
     		// GET request
       		client({path: '/?q='+this.q+this.addtional+this.sortby+'&page='+this.pagination.current_page}).then(function (response) {
-            console.log(response)
+
       			if(response.entity.meta.pagination.total >0)
       				that.gists = response.entity.data;
             
@@ -49,6 +49,8 @@ module.exports = {
                     current_page: response.entity.meta.pagination.current_page,
                     total_pages: response.entity.meta.pagination.total_pages
                 }
+
+                console.log(that.pagination)
 
       		}, function (response) {
           		// error callback

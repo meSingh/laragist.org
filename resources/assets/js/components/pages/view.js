@@ -38,7 +38,7 @@ module.exports = {
                         labelField: 'version',
                         searchField: ['version'],
                         options: that.gist.versions,
-                        items:  [that.gist.versions[0]['version']]
+                        items:  [that.selectedVersion['version']]
                     })
                 var selectize = $select[0].selectize;
 
