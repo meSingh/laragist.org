@@ -136,7 +136,7 @@ module.exports = {
          */
         getCategories: function(){
             var that = this
-            client({path:'/categories'}).then(function(response){
+            client({path:'/categories/all'}).then(function(response){
                 
                 response.entity.data.forEach(function(category){
                     that.categories.push({
