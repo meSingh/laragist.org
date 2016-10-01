@@ -1,15 +1,15 @@
 
 <nav-component></nav-component>
-    
-    <div class="package">
+
+    <div class="package" vocab="http://schema.org/" typeof="SoftwareSourceCode">
 
         <section class="welcome">
             <div class="container">
-                <h2>
-                    {{ gist.name }} 
+                <h2 property="name">
+                    {{ gist.name }}
                     <small class="latest">
                         <i class="fa fa-fw fa-code-fork"></i>
-                        {{ gist.version }}
+                        <span property="version"> {{ gist.version }} </span>
                     </small>
                 </h2>
                 <div class="cats">
@@ -40,11 +40,11 @@
                             <!-- <div class="page-header">
                                 <h3>Description</h3>
                             </div> -->
-                            <p>{{gist.description}}</p>
+                            <p property="description">{{gist.description}}</p>
 
                             <ul class="list-inline tags" v-show="gist.keywords[0]">
                                 <li><i class="fa fa-fw fa-tags"></i></li>
-                                <li v-for="keyword in gist.keywords">#{{keyword}}</li>
+                                <li v-for="keyword in gist.keywords" property="keywords">#{{keyword}}</li>
                             </ul>
                         </div>
 
@@ -72,7 +72,7 @@
                                 <ul class="list-inline authors">
                                     <li v-for="author in gist.authors">
                                         <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=100" alt="{{ author.name }}" title="{{ author.name }}">
-                                        <h4>{{ author.name }}</h4>
+                                        <h4 property="author" >{{ author.name }}</h4>
                                     </li>
                                 </ul>
 
@@ -89,7 +89,7 @@
                                         <div class="col-md-6">
                                             <h3>
                                                 <i class="fa fa-heart"></i>
-                                                {{ gist.favorites }}
+                                                <span>{{ gist.favorites }} </span>
                                             </h3>
                                         </div>
                                     </div>
@@ -99,9 +99,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <ul class="list-inline authors-alt">
-                                            <li v-for="author in gist.authors">
+                                            <li v-for="author in gist.authors" >
                                                 <img src="//www.gravatar.com/avatar/{{ author.email_hash}}?s=120" alt="{{ author.name }}" title="{{ author.name }}">
-                                                <h4>{{ author.name }}</h4>
+                                                <h4 property="author" >{{ author.name }}</h4>
                                             </li>
                                         </ul>
                                     </div>
@@ -121,17 +121,17 @@
                             </template>
 
                             <div class="btns btn-group btn-group-justified">
-                                <a href="{{ gist.repository }}" target="_blank" class="btn btn-default repository">
+                                <a property="codeRepository" href="{{ gist.repository }}" target="_blank" class="btn btn-default repository">
                                     View Source
                                 </a>
-                                <a href="{{ gist.homepage }}" target="_blank" class="btn btn-default homepage">
+                                <a property="url" href="{{ gist.homepage }}" target="_blank" class="btn btn-default homepage">
                                     Visit Homepage
                                 </a>
                             </div>
-                            
+
                         </div>
 
-              
+
                         <!-- <div class="block" v-bind:class="{'version-selector' : versionsListPulled!=1}">
                             <ul>
                                 <li v-for="version in gist.versions">
@@ -141,7 +141,7 @@
                             <div class="pull-over" v-show="!versionsListPulled" v-on:click="versionsListPulled=1"><i class="fa fa-caret-down"></i></div>
                         </div> -->
 
-                        
+
 
                         <div class="version block">
                             <div class="spinner" v-show="!selectedVersion">
@@ -156,12 +156,12 @@
                                 </select>
 
                                 <p>{{ selectedVersion.time }}</p>
-                                
+
                                 <hr>
 
                                 <div v-show="selectedVersion.require">
 
-                                    <h4>requires</h4>                                    
+                                    <h4>requires</h4>
                                     <ul>
                                         <li v-for="(package, number) in selectedVersion.require">
                                             <a href="https://packagist.org/packages/{{ package }}" target="_blank">{{ package }}</a>: {{number}}
@@ -211,15 +211,16 @@
                             </div>
                             <div class="pull-over" v-show="!versionPulled" v-on:click="versionPulled=1"><i class="fa fa-caret-down"></i></div>
                         </div><!--  version block  -->
-                        
+
                     </div>
                 </div> <!--  SECOND ROW  -->
 
 
-               
+
             </div>
         </section>
 
     </div>
+
 
 <footer-component></footer-component>
