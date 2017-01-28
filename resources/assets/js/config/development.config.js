@@ -1,7 +1,7 @@
 var config = {
   env: 'development',
   api: {
-    base_url: 'http://internal-api.laragist.org/v1',
+    base_url: 'https://internal-api.laragist.org/v1',
     defaultRequest: {
       headers: {
         'X-Requested-With': 'rest.js',
